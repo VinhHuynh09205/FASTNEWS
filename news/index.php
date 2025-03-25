@@ -32,6 +32,6 @@
         </main>
     HTML;
 
-    include_once __DIR__ . '/includes/master.php';
+    include 'includes/master.php';
 
 ?>

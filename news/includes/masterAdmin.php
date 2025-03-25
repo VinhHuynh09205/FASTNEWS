@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/config.php'; ?>
+<?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -9,14 +9,14 @@
 </head>
 <body>
 
-<?php include_once __DIR__ . '/adminHeader.php'; ?>
+<?php include __DIR__ . '/adminHeader.php'; ?>
 
 <main>
     <?php echo $content ?? ""; ?>
 </main>
 
 
-<?php include_once __DIR__ . '/adminFooter.php'; ?>
+<?php include __DIR__ . '/footer.php'; ?>
 
 </body>
 </html>
