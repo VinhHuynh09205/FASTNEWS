@@ -5,7 +5,7 @@ body {
   background-color: #f4f4f4;
 }
 header {
-  background: #333;
+  background: #333333;
   color: #fff;
   padding: 15px;
   text-align: center;
@@ -35,8 +35,8 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .featured img {
-  width: 100%;
-  height: auto;
+  width: 600px;
+  height: 350px;
 }
 .latest-news article {
   border-bottom: 1px solid #ddd;

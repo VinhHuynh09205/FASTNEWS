@@ -1,5 +1,5 @@
 <header>
-    <h1>ADMIN</h1>
+    <h1> TRANG ADMIN</h1>
     <nav>
         <ul>
             <li><a href="#">Trang chủ</a></li>
