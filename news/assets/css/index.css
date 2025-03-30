@@ -308,3 +308,15 @@ main {
 #back-to-top:hover{
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+.a-doctiep {
+  text-decoration: #007bff;
+  color: #007bff;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+a:hover{
+   color: rgb(73, 182, 207);
+}
