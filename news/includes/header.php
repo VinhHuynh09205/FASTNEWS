@@ -2,7 +2,7 @@
 <div class="header-container">
         <h1>
           <a href="index.html">
-            <img src="h1.jpg" alt="logo" height="100px" width="100px" />
+            <img src="assets/img/logo.jpg" alt="logo" height="100px" width="100px" />
           </a>
         </h1>
         <span class="separator">|</span>
@@ -33,7 +33,7 @@
         <ul>
           <li></li>
           <li>
-            <a href="index.html"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="../index.html"><i class="fa fa-home"></i> Trang chủ</a>
           </li>
           <li><a href="#">Thế giới</a></li>
           <li><a href="#">Thể thao</a></li>
