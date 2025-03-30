@@ -48,3 +48,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Lấy phần tử nút "Cuộn lên đầu trang"
+document.addEventListener("DOMContentLoaded", function () {
+  let mybutton = document.getElementById("back-to-top");
+
+  if (!mybutton) {
+      console.error("Nút 'back-to-top' không tồn tại!");
+      return;
+  }
+
+  // Ẩn nút khi ở đầu trang
+  mybutton.style.display = "none";
+
+  // Lắng nghe sự kiện cuộn trang
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+          mybutton.style.display = "block"; // Hiện nút khi cuộn xuống
+      } else {
+          mybutton.style.display = "none"; // Ẩn nút khi ở đầu trang
+      }
+  });
+
+  // Khi người dùng nhấn vào nút, cuộn lên đầu trang mượt mà
+  mybutton.addEventListener("click", function () {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+  });
+});

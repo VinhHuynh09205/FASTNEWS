@@ -283,3 +283,28 @@ main {
 .news-hr {
   margin: 20px;
 }
+
+/* back to top btn */
+#back-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#back-to-top:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+}
