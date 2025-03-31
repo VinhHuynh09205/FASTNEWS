@@ -14,9 +14,9 @@ function updateTime() {
     year: "numeric",
     month: "long",
     day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
+    // hour: "2-digit",
+    // minute: "2-digit",
+    // second: "2-digit",
   };
   document.getElementById("datetime").textContent = now.toLocaleDateString(
     "vi-VN",
@@ -48,3 +48,50 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Lấy phần tử nút "Cuộn lên đầu trang"
+document.addEventListener("DOMContentLoaded", function () {
+  let mybutton = document.getElementById("back-to-top");
+
+  if (!mybutton) {
+      console.error("Nút 'back-to-top' không tồn tại!");
+      return;
+  }
+
+  // Ẩn nút khi ở đầu trang
+  mybutton.style.display = "none";
+
+  // Lắng nghe sự kiện cuộn trang
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+          mybutton.style.display = "block"; // Hiện nút khi cuộn xuống
+      } else {
+          mybutton.style.display = "none"; // Ẩn nút khi ở đầu trang
+      }
+  });
+
+  // Khi người dùng nhấn vào nút, cuộn lên đầu trang mượt mà
+  mybutton.addEventListener("click", function () {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+  });
+});
+
+window.addEventListener("scroll", function () {
+  var menu = document.getElementById("menu");
+
+  if (window.scrollY > 143) {
+      menu.style.position = "fixed";
+      menu.style.top = "0";
+      menu.style.left = "0";
+      menu.style.width = "100%";
+      menu.style.zIndex = "1000";
+      menu.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.3)";
+  } else {
+      menu.style.position = "relative";
+      menu.style.boxShadow = "none";
+  }
+});
+

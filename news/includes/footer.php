@@ -12,6 +12,6 @@
       </div>
     </div>
     <hr>
-    <p id="copy">&copy; 2025 Trang Tin Tức. All rights reserved.</p>
+    <p id="copy">&copy; 2025 Fastnews. All rights reserved.</p>
   </div>
 </footer>

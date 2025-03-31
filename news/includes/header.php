@@ -9,6 +9,7 @@
         <span id="datetime"></span>
         <div class="icons">
           <div class="search-container">
+            <input action="#" method="POST" type="text" placeholder="Tìm kiếm" id="keyword" name="q">
             <i class="fa fa-search" id="search-icon"></i>
           </div>
 
@@ -29,9 +30,8 @@
           </div>
         </div>
       </div>
-      <nav>
+      <nav id="menu">
         <ul>
-          <li></li>
           <li>
             <a href="../index.html"><i class="fa fa-home"></i> Trang chủ</a>
           </li>

@@ -29,8 +29,8 @@
           </div>
         </div>
       </div>
-      <nav>
-      <ul>
+      <nav id="menu">
+        <ul>
             <li><a href="#">Trang chủ</a></li>
             <li><a href="#">Quản lý bài viết</a></li>
             <li><a href="#">Quản lý danh mục</a></li>
