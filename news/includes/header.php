@@ -1,12 +1,14 @@
 <header>
 <div class="header-container">
         <h1>
-          <a href="index.html">
+          <a href="index.php">
             <img src="assets/img/logo.jpg" alt="logo" height="100px" width="100px" />
           </a>
         </h1>
         <span class="separator">|</span>
-        <span id="datetime"></span>
+        <div id="datetime">Đang tải thời gian...</div>
+        <span class="separator">|</span>
+        <div id="weather">Đang tải nhiệt độ...</div>
         <div class="icons">
           <div class="search-container">
             <i class="fa fa-search" id="search-icon"></i>
@@ -33,7 +35,7 @@
         <ul>
           <li></li>
           <li>
-            <a href="../index.html"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
           </li>
           <li><a href="#">Thế giới</a></li>
           <li><a href="#">Thể thao</a></li>
