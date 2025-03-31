@@ -4,7 +4,7 @@ $title = "Trang Chủ";
 $content =
     <<<HTML
     <main>
-    <h2>BÀI VIẾT NỔI BẬT</h2><hr>
+    <h2>BÀI VIẾT NỔI BẬT</h2>
     <div class="news-section">
         <section class = "featured">
             <article>
@@ -59,7 +59,42 @@ $content =
                 <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
             </article>
-
+            <hr class="lastestnews1-hr">  
+            <article>
+                <h3><a href="#">Tiêu đề bài viết 3</a></h3>
+                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+            </article>
+            <hr class="lastestnews1-hr">  
+            <article>
+                <h3><a href="#">Tiêu đề bài viết 3</a></h3>
+                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+            </article>
+            <hr class="lastestnews1-hr">  
+            <article>
+                <h3><a href="#">Tiêu đề bài viết 3</a></h3>
+                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+            </article>
+            <hr class="lastestnews1-hr">  
+            <article>
+                <h3><a href="#">Tiêu đề bài viết 3</a></h3>
+                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+            </article>
+            <hr class="lastestnews1-hr">  
+            <article>
+                <h3><a href="#">Tiêu đề bài viết 3</a></h3>
+                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+            </article>
+            <hr class="lastestnews1-hr">  
+            <article>
+                <h3><a href="#">Tiêu đề bài viết 3</a></h3>
+                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+            </article>      
         </section>
         <!-- Cột 2: Tin tức theo danh mục -->
         <section class="category-news">
@@ -140,10 +175,35 @@ $content =
                     </article>
                 </div>
             </div>
+            <div class="topic1">
+                <div class="category-header">
+                    <a href="#">Giải trí</a>
+                    <a href="#">Thể thao</a>
+                    <a href="#">Thế giới</a>
+                    <a href="#">Công nghệ</a>
+                </div>
+                <div class="category-content">
+                    <article>
+                        <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                        <h3><a href="#">Tiêu đề bài viết 1</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+                    </article>
+                    <article>
+                        <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                        <h3><a href="#">Tiêu đề bài viết 2</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+                    </article>
+                    <article>
+                        <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
+                        <h3><a href="#">Tiêu đề bài viết 3</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
+                    </article>
+                </div>
+            </div>
             
         </section>
     </div>
-    <hr>
+    <hr class="topnews-hr">
     <div class="news-section3">
         <!--Tin tức xem nhiều-->
         <section class="top-news">
