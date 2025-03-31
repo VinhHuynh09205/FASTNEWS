@@ -203,25 +203,11 @@ $content =
             
         </section>
     </div>
-    <div class="news-section3">
-        <!--Tin tức xem nhiều-->
-        <section class="top-news">
-            <h2>TIN XEM NHIỀU</h2>
-            <article>
-                <h3><a href="#">Tiêu đề bài viết 1</a></h3>
-                <p>Mô tả ngắn...</p>
-            </article>
-            <article>
-                <h3><a href="#">Tiêu đề bài viết 2</a></h3>
-                <p>Mô tả ngắn...</p>
-            </article>
-            <article>
-                <h3><a href="#">Tiêu đề bài viết 3</a></h3>
-                <p>Mô tả ngắn...</p>
-            </article>
-        </section>    
+    <div class="most-viewed-container">
+    <h2>Xem nhiều</h2>
+    <div id="most-viewed-news"></div>
     </div>
-
+ 
 
     <!-- back to top button -->
     <button id="back-to-top" style="display: none;">
