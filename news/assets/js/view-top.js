@@ -48,10 +48,55 @@ function updateMostViewedNews() {
     let articleElement = document.createElement("div");
     articleElement.classList.add("most-viewed-item");
     articleElement.innerHTML = `
-              <span>${index + 1}</span> 
+              <span>${index + 1}</span>
               <a href="#">${title}</a>
               <span class="comment-count">👁 ${count}</span>
           `;
     mostViewedContainer.appendChild(articleElement);
   });
 }
+
+function saveMostViewedNews() {
+  let mostViewed = document.getElementById("most-viewed-news").innerHTML;
+  localStorage.setItem("mostViewedNews", mostViewed);
+}
+
+// Khi cập nhật danh sách, lưu lại nó
+function updateMostViewedNews() {
+  let views = JSON.parse(localStorage.getItem("viewCounts")) || {};
+
+  if (Object.keys(views).length === 0) {
+    return;
+  }
+
+  let sortedArticles = Object.entries(views)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8);
+
+  let mostViewedContainer = document.getElementById("most-viewed-news");
+  mostViewedContainer.innerHTML = "<h2>TIN XEM NHIỀU</h2>";
+
+  sortedArticles.forEach(([title, count], index) => {
+    let articleElement = document.createElement("div");
+    articleElement.classList.add("most-viewed-item");
+    articleElement.innerHTML = `
+        <span>${index + 1}</span>
+        <a href="#">${title}</a>
+        <span class="comment-count">👁 ${count}</span>
+      `;
+    mostViewedContainer.appendChild(articleElement);
+  });
+
+  // Lưu lại danh sách đã cập nhật
+  saveMostViewedNews();
+}
+
+// Load lại danh sách từ localStorage khi mở lại trang
+document.addEventListener("DOMContentLoaded", function () {
+  let savedNews = localStorage.getItem("mostViewedNews");
+  if (savedNews) {
+    document.getElementById("most-viewed-news").innerHTML = savedNews;
+  } else {
+    updateMostViewedNews();
+  }
+});
