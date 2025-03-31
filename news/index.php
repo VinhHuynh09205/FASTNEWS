@@ -11,6 +11,7 @@ $content =
                 <img src="assets/img/h1.webp" alt="Hình ảnh nổi bật">
                 <h3><a href="#">WHO kích hoạt cơ chế khẩn để hỗ trợ Myanmar sau động đất 7,7 độ</a></h3>
                 <p>Chính quyền Myanmar ban bố tình trạng khẩn cấp tại 6 vùng sau trận động đất mạnh 7,7 độ xảy ra ở miền trung nước này, khiến nhiều công trình đổ sập và gây thương vong.</p>
+                <span id="view-count">👁 0</span>
                 <a href="#" class="a-doctiep">Đọc tiếp</a>
             </article>
         </section>

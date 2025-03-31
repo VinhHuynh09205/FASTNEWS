@@ -17,6 +17,7 @@
     <script src="<?php echo BASE_URL; ?>assets/js/main.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/weather.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/datetime.js"></script>
+    <script src="<?php echo BASE_URL; ?>assets/js/view-count.js"></script>
 </head>
 <body>
 
