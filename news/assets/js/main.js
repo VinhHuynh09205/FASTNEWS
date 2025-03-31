@@ -7,28 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-function updateTime() {
-  let now = new Date();
-  let options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  };
-  document.getElementById("datetime").textContent = now.toLocaleDateString(
-    "vi-VN",
-    options
-  );
-}
-
-// Cập nhật ngay khi tải trang và sau đó mỗi giây
-document.addEventListener("DOMContentLoaded", function () {
-  updateTime();
-  setInterval(updateTime, 1000);
-});
 document.addEventListener("DOMContentLoaded", function () {
   const bellIcon = document.getElementById("bell-icon");
   const notificationDropdown = document.getElementById("notification-dropdown");
@@ -54,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let mybutton = document.getElementById("back-to-top");
 
   if (!mybutton) {
-      console.error("Nút 'back-to-top' không tồn tại!");
-      return;
+    console.error("Nút 'back-to-top' không tồn tại!");
+    return;
   }
 
   // Ẩn nút khi ở đầu trang
@@ -63,18 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Lắng nghe sự kiện cuộn trang
   window.addEventListener("scroll", function () {
-      if (window.scrollY > 50) {
-          mybutton.style.display = "block"; // Hiện nút khi cuộn xuống
-      } else {
-          mybutton.style.display = "none"; // Ẩn nút khi ở đầu trang
-      }
+    if (window.scrollY > 50) {
+      mybutton.style.display = "block"; // Hiện nút khi cuộn xuống
+    } else {
+      mybutton.style.display = "none"; // Ẩn nút khi ở đầu trang
+    }
   });
 
   // Khi người dùng nhấn vào nút, cuộn lên đầu trang mượt mà
   mybutton.addEventListener("click", function () {
-      window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-      });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 });
