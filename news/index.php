@@ -203,7 +203,6 @@ $content =
             
         </section>
     </div>
-    <hr class="topnews-hr">
     <div class="news-section3">
         <!--Tin tức xem nhiều-->
         <section class="top-news">
@@ -222,6 +221,7 @@ $content =
             </article>
         </section>    
     </div>
+
 
     <!-- back to top button -->
     <button id="back-to-top" style="display: none;">
