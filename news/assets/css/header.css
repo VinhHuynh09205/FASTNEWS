@@ -1,0 +1,54 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.header-container h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  float: left;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  margin-left: 50px;
+}
+
+.header-container h1 a img:hover {
+  opacity: 0.8;
+}
+
+.separator {
+  font-size: 20px;
+  color: gray;
+  margin: 0 8px; /* Giảm khoảng cách giữa hình và đường gạch */
+}
+
+#datetime {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 5px; /* Đưa ngày tháng sát vào đường gạch */
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  margin-left: auto;
+  justify-content: right;
+  margin-right: 20px;
+}
+
+.icons i {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icons i:hover {
+  color: #007bff;
+}
