@@ -266,7 +266,9 @@ main img:hover {
 .lastestnews-hr {
   margin: 20px;
 }
-
+.topnews-hr {
+  margin: 20px;
+}
 /* back to top btn */
 #back-to-top{
   position: fixed;
