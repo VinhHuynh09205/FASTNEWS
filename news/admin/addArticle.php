@@ -41,8 +41,6 @@
                 <p id="status"></p>
             </form>
         </div>
-
-        <script src="../assets/js/addArticle.js"></script>
     HTML;
     
     include '../includes/masterAdmin.php';

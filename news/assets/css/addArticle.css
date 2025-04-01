@@ -1,10 +1,4 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
+/* định dạng cho trang thêm bài báo */
 .admin-container{
     width: 50%;
     margin: 40px auto;
