@@ -1,18 +1,19 @@
-<?php
-    $title = "Đăng nhập Admin";
-    $content =
-    <<<HTML
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập Admin</title>
     <link rel="stylesheet" href="../assets/css/loginAdmin.css">
-    <div class="login-container">
-        <div class="avatar-container">
+</head>
+<body>
+
+    <div id="login-container">
+        <div id="avatar-container">
             <img src="../assets/css/img/avatar.png" alt="User Avatar" class="avatar">
         </div>
         <h2>Đăng nhập Admin</h2>
-        <form action="loginAdmin.php" method="POST">
-            <div class="form-group">
-                <label for="name">Họ và Tên:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+        <form action="loginAdmin_process.php" method="POST">
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -24,8 +25,6 @@
             <button type="submit">Đăng nhập</button>
         </form>
     </div>
-    HTML;
 
-    include '../includes/masterAdmin.php';
-?>
-
+</body>
+</html>
