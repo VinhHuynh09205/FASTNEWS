@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="../assets/css/loginAdmin.css">
 </head>
 <body>
-
     <div id="login-container">
         <div id="avatar-container">
-            <img src="../assets/css/img/avatar.png" alt="User Avatar" class="avatar">
+            <img src="../assets/img/avatar.png" alt="User Avatar" class="avatar">
         </div>
         <h2>Đăng nhập Admin</h2>
-        <form action="loginAdmin_process.php" method="POST">
+        <form action="#" method="POST">
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -25,6 +24,5 @@
             <button type="submit">Đăng nhập</button>
         </form>
     </div>
-
 </body>
 </html>

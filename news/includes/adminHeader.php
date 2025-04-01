@@ -31,7 +31,7 @@
       </div>
       <nav id="menu">
         <ul>
-            <li><a href="#">Trang chủ</a></li>
+            <li><a href="../index.php">Giao diện người dùng</a></li>
             <li><a href="#">Quản lý bài viết</a></li>
             <li><a href="#">Quản lý danh mục</a></li>
             <li><a href="#">Quản lý người dùng </a></li>
