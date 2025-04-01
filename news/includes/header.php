@@ -35,9 +35,9 @@
       <nav id="menu">
         <ul>
           <li>
-            <a href="index.php"><i class="fa fa-home"></i> Trang chủ</a>
+            <a href="../index.php"><i class="fa fa-home"></i> Trang chủ</a>
           </li>
-          <li><a href="#">Thế giới</a></li>
+          <li><a href="../page/CatalogueDetails.php">Thế giới</a></li>
           <li><a href="#">Thể thao</a></li>
           <li><a href="#">Công nghệ</a></li>
           <li><a href="#">Giải trí</a></li>

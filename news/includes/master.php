@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/notification.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/header.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/viewer-container.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/PageCatalogue.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
