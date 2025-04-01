@@ -204,7 +204,6 @@ $content =
         </section>
     </div>
     <div class="most-viewed-container">
-    <h2>Xem nhiều</h2>
     <div id="most-viewed-news"></div>
     </div>
  

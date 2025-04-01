@@ -53,14 +53,14 @@ main {
   color:#242323;
 }
 
-main img {
+/* main img {
   transition: transform 0.3s ease-in-out;
   object-fit: cover;
 }
 
 main img:hover {
   transform: scale(1.01);
-}
+} */
 
 /*Tin Nổi Bật */
 .news-section{

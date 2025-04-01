@@ -37,10 +37,10 @@
           <li>
             <a href="../index.php"><i class="fa fa-home"></i> Trang chủ</a>
           </li>
-          <li><a href="../page/CatalogueDetails.php">Thế giới</a></li>
-          <li><a href="#">Thể thao</a></li>
-          <li><a href="#">Công nghệ</a></li>
-          <li><a href="#">Giải trí</a></li>
+          <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php">Thế giới</a></li>
+          <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php">Thể thao</a></li>
+          <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php">Công nghệ</a></li>
+          <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php">Giải trí</a></li>
         </ul>
       </nav>
 </header>

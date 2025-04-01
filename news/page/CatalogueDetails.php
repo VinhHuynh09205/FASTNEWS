@@ -3,7 +3,7 @@ $title = "Thế giới";
 $content = 
  <<<HTML
 <main>
-<h2>BÀI VIẾT NỔI BẬT</h2>
+<h2>THẾ GIỚI</h2>
     <div class="news-section">
         <section class = "featured">
             <article>
@@ -40,7 +40,6 @@ $content =
     <div class="news-section2">
         <!--Tin tức mới nhất -->
         <section class="latest-news">
-            <h2>TIN MỚI NHẤT</h2><hr>
             <article>
                 <h3><a href="#">WHO kích hoạt cơ chế khẩn để hỗ trợ Myanmar sau động đất 7,7 độ</a></h3>
                 <img src="../assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
@@ -148,7 +147,6 @@ $content =
                 <div class="category-header">
                 </div>
     <div class="most-viewed-container">
-    <h2>Xem nhiều</h2>
     <div id="most-viewed-news"></div>
     </div>
                 </div>
