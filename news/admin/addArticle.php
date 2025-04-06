@@ -12,6 +12,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Tác giả:</label>
+                    <input type="text" name="author" required>
+                </div>
+
+                <div class="form-group">
                     <label>Miêu tả ngắn:</label>
                     <textarea name="description" required></textarea>
                 </div>
