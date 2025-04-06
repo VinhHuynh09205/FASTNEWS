@@ -1,4 +1,7 @@
-<?php include 'config.php'; ?>
+<?php 
+  include 'config.php';
+  include_once __DIR__ . '/../functions/checkLogin.php';
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -14,17 +17,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <script src="<?php echo BASE_URL; ?>assets/js/main.js"></script>
+    <script src="<?php echo BASE_URL; ?>assets/js/addArticle.js"></script>
 </head>
 <body>
 
-<?php include __DIR__ . '/adminHeader.php'; ?>
+    <?php include __DIR__ . '/adminHeader.php'; ?>
 
-<main>
-    <?php echo $content ?? ""; ?>
-</main>
+    <main>
+        <?php echo $content ?? ""; ?>
+    </main>
 
 
-<?php include __DIR__ . '/footer.php'; ?>
+    <?php include __DIR__ . '/footer.php'; ?>
 
 </body>
 </html>

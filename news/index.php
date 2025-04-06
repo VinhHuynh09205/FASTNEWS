@@ -207,11 +207,6 @@ $content =
     <div id="most-viewed-news"></div>
     </div>
  
-
-    <!-- back to top button -->
-    <button id="back-to-top" style="display: none;">
-        <i class="fa fa-arrow-up"></i>
-    </button>
     </main>
     HTML;
 

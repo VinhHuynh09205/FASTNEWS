@@ -1,6 +1,5 @@
 #footer {
     background-color: rgb(255, 255, 255);
-    /* border-top: solid 1px black; */
 }
 
 #footer-content {
@@ -15,7 +14,6 @@
 #infor {
     float: left;
     padding: 5px 50px 0 100px;
-    /* border-right: solid 1px black; */
     margin: 20px 0 10px 0;
 }
 
@@ -25,7 +23,6 @@
 
 footer hr {
     clear: both;
-    /* border: 0.8px solid #6b6a6a; */
     width: 80%;
 }
 #copy {

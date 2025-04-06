@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $error = $_SESSION['login_error'] ?? '';
+    unset($_SESSION['login_error']);
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -12,7 +17,7 @@
             <img src="../assets/img/avatar.png" alt="User Avatar" class="avatar">
         </div>
         <h2>Đăng nhập Admin</h2>
-        <form action="#" method="POST">
+        <form action="../functions/login.php" method="POST">
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -25,4 +30,9 @@
         </form>
     </div>
 </body>
+<?php if (!empty($error)): ?>
+    <script>
+        alert("<?= addslashes($error) ?>"); 
+    </script>
+<?php endif; ?>
 </html>

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/header.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/viewer-container.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/articleDetails.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/CatalogueDetails.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -32,7 +33,10 @@
 
   <?php include __DIR__ . '/footer.php'; ?>
 
-
+  <!-- back to top button -->
+  <button id="back-to-top" style="display: none;">
+        <i class="fa fa-arrow-up"></i>
+  </button>
 </body>
 
 </html>
