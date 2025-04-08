@@ -1,5 +1,4 @@
-const url = `https://api.openweathermap.org/data/2.5/weather?id=1566083&units=metric&appid=0b8e857b116c127d3e54a277edb42a91
-`;
+const url = `https://api.openweathermap.org/data/2.5/weather?id=1566083&units=metric&appid=0b8e857b116c127d3e54a277edb42a91`;
 
 fetch(url)
   .then((response) => response.json())

@@ -17,10 +17,8 @@
   <nav id="menu">
     <ul>
       <li><a href="../index.php">Giao diện người dùng</a></li>
-      <li><a href="#">Quản lý bài viết</a></li>
-      <li><a href="#">Quản lý danh mục</a></li>
-      <li><a href="#">Quản lý người dùng </a></li>
-      <li><a href="#">Thống kê</a></li>
+      <li><a href="../admin/articleList.php">Quản lý bài viết</a></li>
+      <li><a href="../admin/dashboard.php">Trang Chủ</a></li>
     </ul>
   </nav>
 </header>

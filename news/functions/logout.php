@@ -1,5 +1,5 @@
 <?php
-    session_start(); // Khởi tạo phiên
+    session_start();
     session_unset();
     session_destroy();
 

@@ -1,5 +1,5 @@
 <?php
-    $title = "Trang Admin";
+    $title = "Trang Admin - FASTNEWS";
     
     $content =
     <<<HTML

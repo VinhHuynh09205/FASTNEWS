@@ -1,6 +1,6 @@
 <?php
 
-$title = "Chi tiết bài viết";
+$title = "Chi tiết bài báo - FASTNEWS";
 $content = <<<HTML
 <main>
     <article class="article-detail">
@@ -9,7 +9,6 @@ $content = <<<HTML
         <img src="../assets/img/featured-news/h1.webp" alt="Hình ảnh minh họa" class="article-image">
         <div class="article-content">
             <p>Đây là nội dung chi tiết của bài viết. Bạn có thể thêm văn bản tùy ý.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio...</p>
         </div>
     </article>
 

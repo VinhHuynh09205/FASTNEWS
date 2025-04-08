@@ -14,14 +14,11 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/viewer-container.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/articleDetails.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/CatalogueDetails.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/main.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/weather.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/datetime.js"></script>
-    <script src="<?php echo BASE_URL; ?>assets/js/view-count.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/view-top.js"></script>
 </head>
 

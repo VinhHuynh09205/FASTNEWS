@@ -1,6 +1,6 @@
 /* định dạng cho trang thêm bài báo */
 .admin-container{
-    width: 50%;
+    width: 60%;
     margin: 40px auto;
     background: #f9f9f9;
     padding: 20px;
@@ -52,7 +52,7 @@ button{
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100px;
+    width: 150px;
     margin-left: 250px;
 }
 
