@@ -22,11 +22,8 @@
               <ul id="new-notifications">
                 <li><a href="#">Bản cập nhật 1</a></li>
                 <li><a href="#">Bản cập nhật 2</a></li>
-              </ul>
-              <h4>Tin đã xem</h4>
-              <ul id="read-notifications">
-                <li><a href="#">Bản cập nhật cũ 1</a></li>
-                <li><a href="#">Bản cập nhật cũ 2</a></li>
+                <li><a href="#">Bản cập nhật 3</a></li>
+                <li><a href="#">Bản cập nhật 4</a></li>
               </ul>
             </div>
           </div>

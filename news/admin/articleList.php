@@ -14,7 +14,7 @@
             <td colspan="4" align="left">
                 <input id="xoahet" value="Xóa đã chọn" type="button">
             </td>
-            <td colspan="2" align="center">
+            <td colspan="2" align="center" nowrap>
                 <a href="addArticle.php">Thêm bài mới</a>
             </td>
         </tr>

@@ -47,6 +47,7 @@ $content =
     </div>
     
     <hr class="lastestnews-hr">
+
     <div class="news-section2">
         <!--Tin tức mới nhất -->
         <section class="latest-news">
@@ -69,6 +70,8 @@ $content =
                     </article>
                 </div>
             </div>
+        </section>
+    </div>
         <div class="most-viewed-container">
             <div id="most-viewed-news"></div>
         </div>

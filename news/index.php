@@ -1,132 +1,120 @@
 <?php
-$title = "Trang Chủ - FASTNEWS";
+    $title = "Trang Chủ - FASTNEWS";
+    include "functions/getArticle.php";
 
-$content =
-    <<<HTML
-    <main>
+    //lấy bài viết nổi bâth
+    $featuredNews = getFeaturedNews($conn);
+    $featuredIds = array_column($featuredNews, 'id');
+
+    //lấy tất cả bài viết mưới nhất
+    $allNews = getAllNews($conn);
+
+    $latestNews = [];
+    $remainingNews = [];
+
+    foreach ($allNews as $news) {
+        if (in_array($news['id'], $featuredIds)) continue;
+
+        if (count($latestNews) < 9) {
+            $latestNews[] = $news; //lấy 10 bài mới nhất để hiển thị
+        } else {
+            $remainingNews[] = $news; //lấy các bài còn lại để lọc theo danh mục
+        }
+    }
+
+    $latestIds = array_column($latestNews, 'id');
+
+    $categories = ['Thế giới', 'Thể thao', 'Công nghệ', 'Giải trí'];
+
+    ob_start();
+?>
+
+<main>
     <h2>BÀI VIẾT NỔI BẬT</h2>
     <div class="news-section">
-        <!-- bài viết nổi bật 1 -->
-        <section class = "featured">
+        <!-- featured 1 -->
+        <section class="featured">
             <article>
-                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
-                <h3><b><a href="page/articleDetails.php">WHO kích hoạt cơ chế khẩn để hỗ trợ Myanmar sau động đất 7,7 độ</a></b></h3>
-                <p>Chính quyền Myanmar ban bố tình trạng khẩn cấp tại 6 vùng sau trận động đất mạnh 7,7 độ xảy ra ở miền trung nước này, khiến nhiều công trình đổ sập và gây thương vong.</p>
+                <img src="uploads/<?= htmlspecialchars($featuredNews[0]['image']) ?>" alt="Hình ảnh nổi bật">
+                <h3><b><a href="page/articleDetails.php?id=<?= $featuredNews[0]['id'] ?>">
+                    <?= htmlspecialchars($featuredNews[0]['title']) ?></a></b></h3>
+                <p><?= htmlspecialchars($featuredNews[0]['description']) ?></p>
                 <span id="view-count">👁 0</span>
-                <a class="doctiep" href="#">Đọc tiếp</a>
+                <a class="doctiep" href="page/articleDetails.php?id=<?= $featuredNews[0]['id'] ?>">Đọc tiếp</a>
             </article>
         </section>
     </div>
+
     <div class="news-section">
-        <!-- bài viết nổi bật 2 -->
-        <section class = "featured2">
+        <!-- featured 2 & 3 -->
+        <?php for ($i = 1; $i <= 2; $i++): ?>
+        <section class="featured<?= $i+1 ?>">
             <article>
-                <img src="assets\img\latest-news\h2.webp" alt="Hình ảnh nổi bật">
-                <h3><b><a href="#">Hàng chục người về Đền Hùng trước ngày giỗ Tổ</a></b></h3>
-                <p>Phú Thọ - Khu di tích lịch sử Đền Hùng đón hàng chục nghìn lượt khách về hành lễ trong hai ngày 29 và 30/3, trước giỗ Tổ Hùng Vương hơn một tuần.</p>
+                <img src="uploads/<?= htmlspecialchars($featuredNews[$i]['image']) ?>" alt="Hình ảnh nổi bật">
+                <h3><b><a href="page/articleDetails.php?id=<?= $featuredNews[$i]['id'] ?>">
+                    <?= htmlspecialchars($featuredNews[$i]['title']) ?></a></b></h3>
+                <p><?= htmlspecialchars($featuredNews[$i]['description']) ?></p>
                 <span id="view-count">👁 0</span>
-                <a class="doctiep" href="#">Đọc tiếp</a>
+                <a class="doctiep" href="page/articleDetails.php?id=<?= $featuredNews[$i]['id'] ?>">Đọc tiếp</a>
             </article>
         </section>
-        <!-- bài viết nổi bật 3 -->
-        <section class = "featured3">
-            <article>
-                <img src="assets\img\latest-news\h3.webp" alt="Hình ảnh nổi bật">
-                <h3><b><a href="#">Việt Nam viện trợ 300.000 USD giúp Myanmar khắc phục hậu quả động đất</a></b></h3>
-                <p>Việt Nam cung cấp đồ cứu trợ và viện trợ 300.000 USD nhằm giúp Myanmar khắc phục hậu quả sau trận động đất 7,7 độ.</p>                
-                <span id="view-count">👁 0</span>
-                <a class="doctiep" href="#">Đọc tiếp</a>
-            </article>
-        </section>
+        <?php endfor; ?>
     </div>
-    
+
     <hr class="lastestnews-hr">
     <div class="news-section2">
         <!--Tin tức mới nhất -->
         <section class="latest-news">
-            <h2>TIN MỚI NHẤT</h2><hr>
-            <article>
-                <h3><a href="#">WHO kích hoạt cơ chế khẩn để hỗ trợ Myanmar sau động đất 7,7 độ</a></h3>
-                <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
-            </article>
-            <hr class="lastestnews1-hr">     
+            <h2>TIN MỚI NHẤT</h2>
+            <hr>
+            <?php foreach ($latestNews as $news): ?>
+                <article>
+                    <h3><a href="page/articleDetails.php?id=<?= $news['id'] ?>">
+                        <?= htmlspecialchars($news['title']) ?></a></h3>
+                    <img src="uploads/<?= htmlspecialchars($news['image']) ?>" alt="Hình ảnh">
+                    <p><?= htmlspecialchars($news['description']) ?></p>
+                </article>
+                <hr class="lastestnews1-hr">
+            <?php endforeach; ?>
         </section>
+
         <!-- Tin tức theo danh mục -->
         <section class="category-news">
-            <div class="topic1">
-                <div class="category-header">
-                    <a href="#">Thế giới</a>
-                    <a href="#">Thể thao</a>
-                    <a href="#">Công nghệ</a>
-                    <a href="#">Giải trí</a>
+            <?php
+            $topicIndex = 1;
+            $excludedIds = array_merge($featuredIds, $latestIds); // loại hết bài đã hiển thị
+
+            foreach ($categories as $category):
+                $newsInCategory = getNewsByCategory($remainingNews, $category, $excludedIds);
+                ?>
+                <div class="topic<?= $topicIndex ?>">
+                    <a class="categoryHeader" href="#"><?= htmlspecialchars($category) ?></a>
+                    <div class="category-content">
+                        <?php foreach (array_slice($newsInCategory, 0, 3) as $news): ?>
+                            <article>
+                                <img src="uploads/<?= htmlspecialchars($news['image']) ?>" alt="<?= htmlspecialchars($news['title']) ?>">
+                                <h3><a href="page/articleDetails.php?id=<?= $news['id'] ?>">
+                                    <?= htmlspecialchars($news['title']) ?></a></h3>
+                                <p><?= htmlspecialchars($news['description']) ?></p>
+                            </article>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-                <div class="category-content">
-                    <article>
-                        <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
-                        <h3><a href="#">Tiêu đề bài viết 1</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
-                    </article>
-                </div>
-            </div>
-            <hr>
-            <div class="topic2">
-                <div class="category-header">
-                    <a href="#">Giải trí</a>
-                    <a href="#">Thế giới</a>
-                    <a href="#">Công nghệ</a>
-                    <a href="#">Thể thao</a>
-                </div>
-                <div class="category-content">
-                    <article>
-                        <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
-                        <h3><a href="#">Tiêu đề bài viết 1</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
-                    </article>
-                </div>
-            </div>
-            <hr>
-            <div class="topic3">
-                <div class="category-header">
-                    <a href="#">Công nghệ</a>
-                    <a href="#">Thể thao</a>
-                    <a href="#">Thế giới</a>
-                    <a href="#">Giải trí</a>
-                </div>
-                <div class="category-content">
-                    <article>
-                        <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
-                        <h3><a href="#">Tiêu đề bài viết 1</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
-                    </article>
-                </div>
-            </div>
-            <hr>
-            <div class="topic4">
-                <div class="category-header">
-                    <a href="#">Thể thao</a>
-                    <a href="#">Giải trí</a>
-                    <a href="#">Thế giới</a>
-                    <a href="#">Công nghệ</a>
-                </div>
-                <div class="category-content">
-                    <article>
-                        <img src="assets\img\latest-news\h1.webp" alt="Hình ảnh nổi bật">
-                        <h3><a href="#">Tiêu đề bài viết 1</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas, molestias quos, tempora ex aliquam blanditiis deserunt suscipit rerum, assumenda iusto iste laboriosam! Quos, nihil maxime recusandae voluptatibus pariatur provident.</p>
-                    </article>
-                </div>
-            </div>
-            
+                <hr>
+                <?php
+                $excludedIds = array_merge($excludedIds, array_column($newsInCategory, 'id'));
+                $topicIndex++;
+            endforeach;
+            ?>
         </section>
     </div>
+
     <div class="most-viewed-container">
         <div id="most-viewed-news"></div>
     </div>
- 
-    </main>
-    HTML;
+</main>
 
-include 'includes/master.php';
-
+<?php
+    $content = ob_get_clean();
+    include 'includes/master.php';
 ?>

@@ -16,9 +16,9 @@
   </div>
   <nav id="menu">
     <ul>
-      <li><a href="../index.php">Giao diện người dùng</a></li>
-      <li><a href="../admin/articleList.php">Quản lý bài viết</a></li>
       <li><a href="../admin/dashboard.php">Trang Chủ</a></li>
+      <li><a href="../index.php" target="_blank">Giao diện người dùng</a></li>
+      <li><a href="../admin/articleList.php">Quản lý bài viết</a></li>
     </ul>
   </nav>
 </header>

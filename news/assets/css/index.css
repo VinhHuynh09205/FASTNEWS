@@ -1,12 +1,12 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0 auto;
   padding: 0;
   background-color: #f4f4f4;
   max-width: 1250px;
   min-width: 750px;
 }
-
+  
 /* thu giãn màn hình */
 @media screen and (max-width: 750px) {
   .news-section2,
@@ -37,6 +37,10 @@ body {
   .category-content article {
     flex: 1 1 calc(50% - 20px);
   }
+
+  .icons {
+    clear: both;
+  }
 }
 
 main {
@@ -53,15 +57,6 @@ main {
   font-size:small;
   color:#242323;
 }
-
-/* main img {
-  transition: transform 0.3s ease-in-out;
-  object-fit: cover;
-}
-
-main img:hover {
-  transform: scale(1.01);
-} */
 
 /*Tin Nổi Bật */
 .news-section{
@@ -93,6 +88,7 @@ main img:hover {
   min-width: 300px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
 .featured3 {
   margin: 10px;
   background-color: #ffffff;
@@ -102,19 +98,19 @@ main img:hover {
   padding: 15px;
 }
 
-
 /* ảnh */
 .featured img {
   float: left;
   width: 50%;
-  height: auto;
+  height: 300px;
   margin-right: 20px;
   border-radius: 8px;
+  object-fit: cover; 
 }
 .featured2 img,
 .featured3 img {
     width: 100%;
-    height: auto; 
+    height: 300px; 
     border-radius: 8px;
     object-fit: cover; 
 }
@@ -138,6 +134,7 @@ main img:hover {
 
 /* format từng bài báo */
 .category-news a, .latest-news a, .top-news a {
+  padding-right: 5px;
   clear: both;
   text-decoration: none;
   font-weight: bold;
@@ -154,7 +151,7 @@ main img:hover {
 }
 
 .category-news {
-  display: flex;
+  display: flex; 
   gap: 10px;
 }
 
@@ -198,32 +195,13 @@ main img:hover {
 .category-news hr {
   margin-bottom: 20px;
 }
-.category-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 10px;
+
+.categoryHeader {
+  padding-bottom: 3px;
+  font-size: large !important;
+  border-bottom: solid 1px black !important;
 }
-.category-header a {
-  border-right: solid 2px #ccc;
-  padding-right: 40px;
-  font-size: small;
-  font-weight: lighter;
-  color:#6a6a6a;
-}
-.category-header a:last-child {
-  border-right: none;
-}
-.category-header a:first-child {
-  font-size: large;
-  font-weight: bold;
-  color: #000000;
-  text-decoration: underline rgb(94, 93, 93);
-}
-.category-header a:hover {
-  color: #000000;
-}
+
 .category-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -231,6 +209,7 @@ main img:hover {
   padding: 10px;
 }
 .category-content h3{
+  padding-right: 2px;
   margin: 0;
 }
 .category-content p{

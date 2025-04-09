@@ -5,5 +5,4 @@
     $base_folder = str_replace($document_root, '', $script_dir . "/.."); 
     $base_url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $base_folder . "/";
     define('BASE_URL', $base_url);
-
 ?>
