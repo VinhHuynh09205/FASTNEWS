@@ -12,12 +12,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Khi người dùng click vào bài viết
     link.addEventListener("click", function () {
-      increaseViewCount(title);
-      viewSpan.textContent = `👁 ${getViewCount(title)}`;
-      updateMostViewedNews(); // Cập nhật "TIN XEM NHIỀU"
+      const articleId = article.getAttribute("data-id");
+
+      // Gửi request cập nhật view về server
+      fetch("../functions/update_view.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `id=${articleId}`,
+      });
     });
   });
 
+  increaseViewCount(title);
+  viewSpan.textContent = `👁 ${getViewCount(title)}`;
   updateMostViewedNews(); // Cập nhật danh sách khi load trang
 });
 

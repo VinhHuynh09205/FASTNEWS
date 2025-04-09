@@ -39,7 +39,11 @@
                 <h3><b><a href="page/articleDetails.php?id=<?= $featuredNews[0]['id'] ?>">
                     <?= htmlspecialchars($featuredNews[0]['title']) ?></a></b></h3>
                 <p><?= htmlspecialchars($featuredNews[0]['description']) ?></p>
-                <span id="view-count">👁 0</span>
+                <article data-id="34">
+  <a href="detail.php?id=5">Tiêu đề bài viết</a>
+  <span class="view-count">👁 0</span>
+</article>
+
                 <a class="doctiep" href="page/articleDetails.php?id=<?= $featuredNews[0]['id'] ?>">Đọc tiếp</a>
             </article>
         </section>
@@ -54,7 +58,11 @@
                 <h3><b><a href="page/articleDetails.php?id=<?= $featuredNews[$i]['id'] ?>">
                     <?= htmlspecialchars($featuredNews[$i]['title']) ?></a></b></h3>
                 <p><?= htmlspecialchars($featuredNews[$i]['description']) ?></p>
-                <span id="view-count">👁 0</span>
+                <article data-id="34">
+  <a href="detail.php?id=5">Tiêu đề bài viết</a>
+  <span class="view-count">👁 0</span>
+</article>
+
                 <a class="doctiep" href="page/articleDetails.php?id=<?= $featuredNews[$i]['id'] ?>">Đọc tiếp</a>
             </article>
         </section>
@@ -73,6 +81,9 @@
                         <?= htmlspecialchars($news['title']) ?></a></h3>
                     <img src="uploads/<?= htmlspecialchars($news['image']) ?>" alt="Hình ảnh">
                     <p><?= htmlspecialchars($news['description']) ?></p>
+                    <article data-id="5">
+  <a href="detail.php?id=34">Tiêu đề bài viết</a>
+  <span class="view-count">👁 0</span>
                 </article>
                 <hr class="lastestnews1-hr">
             <?php endforeach; ?>
@@ -96,6 +107,9 @@
                                 <h3><a href="page/articleDetails.php?id=<?= $news['id'] ?>">
                                     <?= htmlspecialchars($news['title']) ?></a></h3>
                                 <p><?= htmlspecialchars($news['description']) ?></p>
+                                <article data-id="5">
+  <a href="detail.php?id=34">Tiêu đề bài viết</a>
+  <span class="view-count">👁 0</span>
                             </article>
                         <?php endforeach; ?>
                     </div>

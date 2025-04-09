@@ -1,0 +1,26 @@
+body {
+  font-family: Arial;
+  background: #f8f9f9;
+  padding: 20px;
+}
+
+.stat-box {
+  background: #e8f0fe;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin: auto;
+}
+
+.stat-box h3 {
+  margin: 10px 0 5px;
+}
+
+.stat-box p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 20px;
+  color: #2a6edc;
+}
