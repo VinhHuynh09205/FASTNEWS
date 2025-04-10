@@ -4,10 +4,9 @@
     $username = "root";
     $password = "";
     $database = "news";
-    $port = 3307; // Thêm dòng này để cấu hình cổng MySQL
 
     // Kết nối MySQL với port chỉ định
-    $conn = new mysqli($host, $username, $password, $database, $port);
+    $conn = new mysqli($host, $username, $password, $database);
 
     // Kiểm tra kết nối
     if ($conn->connect_error) {

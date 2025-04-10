@@ -141,18 +141,17 @@ main {
   color: #000000;
 }
 
-.category-news article, .latest-news article, .top-news article {
+.latest-news article, .top-news article {
   clear: both;
+  padding-top: 10px;
+}
+
+.category-news article {
   padding-top: 10px;
 }
 
 .category-news a:hover, .latest-news a:hover, .top-news a:hover {
   color: #3f35ff;
-}
-
-.category-news {
-  display: flex; 
-  gap: 10px;
 }
 
 /* Chia tin mới, tin theo danh mục thành 2 cột*/
@@ -192,21 +191,25 @@ main {
   min-width: 300px;
   display: block;
 }
+
 .category-news hr {
   margin-bottom: 20px;
 }
-
 .categoryHeader {
   padding-bottom: 3px;
   font-size: large !important;
   border-bottom: solid 1px black !important;
 }
-
 .category-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 20px;
   padding: 10px;
+}
+.category-content article {
+  display: flex;
+  flex-direction: column;
+  border-right: solid 0.3px #b9b9b9;
 }
 .category-content h3{
   padding-right: 2px;
@@ -215,12 +218,6 @@ main {
 .category-content p{
   margin-right: 10px;
   max-width: 180px;
-}
-.category-content article {
-  flex: 1 1 calc(33.33% - 20px); 
-  display: flex;
-  flex-direction: column;
-  border-right: solid 0.3px #b9b9b9;
 }
 
 /* xóa border ở bài cuối hàng */

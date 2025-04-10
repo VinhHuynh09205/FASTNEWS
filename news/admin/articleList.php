@@ -1,14 +1,15 @@
 <?php
-    include '../functions/database.php';
-    $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
+include '../functions/database.php';
 
-    $title = "Quản lý bài viết - FASTNEWS";
+$result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
+$title = "Quản lý bài viết - FASTNEWS";
 
-    /////////////////////////////
-    $content = <<<HTML
-    <h1 style="text-align: center;"> QUẢN LÝ BÀI VIẾT</h1>
-    <hr style="width: 90%; margin-bottom: 30px;">
-    <form id="form1" method="post">
+ob_start(); // Bắt đầu lưu output
+?>
+
+<h1 style="text-align: center;"> QUẢN LÝ BÀI VIẾT</h1>
+<hr style="width: 90%; margin-bottom: 30px;">
+<form id="form1" method="post">
     <table align="center" border="1" cellpadding="4" cellspacing="0" width="1000">
         <tr>
             <td colspan="4" align="left">
@@ -25,31 +26,25 @@
             <td>Ngày thêm</td>
             <td colspan="2">Thao tác</td>
         </tr>
-    HTML;
 
-    /////////////////////////
-    while ($row = $result->fetch_assoc()) {
-        $id = $row['id'];
-        $titleRow = htmlspecialchars($row['title']);
-        $category = htmlspecialchars($row['category']);
-        $createdAt = $row['created_at'];
-
-        $content .= <<<HTML
-        <tr>
-            <td align="center"><input name="chon" value="{$id}" class="chon" type="checkbox"></td>
-            <td>{$titleRow}</td>
-            <td>{$category}</td>
-            <td>{$createdAt}</td>
-            <td align=center><a href="addArticle.php?id={$id}">Sửa</a></td>
-            <td align=center><a href="../functions/deleteArticle.php?id={$id}" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a></td>
-        </tr>
-        HTML;
-    }
-
-    /////////////////////////////////
-    $content .= <<<HTML
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td align="center">
+                    <input name="chon" value="<?= $row['id'] ?>" class="chon" type="checkbox">
+                </td>
+                <td><?= htmlspecialchars($row['title']) ?></td>
+                <td><?= htmlspecialchars($row['category']) ?></td>
+                <td><?= $row['created_at'] ?></td>
+                <td align="center"><a href="addArticle.php?id=<?= $row['id'] ?>">Sửa</a></td>
+                <td align="center">
+                    <a href="../functions/deleteArticle.php?id=<?= $row['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
+                </td>
+            </tr>
+        <?php endwhile; ?>
     </table>
-    </form>
-    HTML;
-    include '../includes/masterAdmin.php';
+</form>
+
+<?php
+$content = ob_get_clean(); 
+include '../includes/masterAdmin.php'; 
 ?>

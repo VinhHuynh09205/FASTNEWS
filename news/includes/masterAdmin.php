@@ -18,7 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/main.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/articleList.js"></script>
-    <script src="<?php echo BASE_URL; ?>assets/js/view-top.js"></script>
+    <script src="<?php echo BASE_URL; ?>assets/js/getViews.js"></script>
 </head>
 <body>
 
