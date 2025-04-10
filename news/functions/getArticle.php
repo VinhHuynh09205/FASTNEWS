@@ -60,5 +60,25 @@ function getArticleById($conn, $id) {
 
     return null;
 }
+function getNewsByCategoryFromDB($conn, $category) {
+    $sql = "SELECT * FROM news WHERE category = ? ORDER BY created_at DESC LIMIT 10";
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        die("Lỗi prepare(): " . $conn->error);
+    }
+
+    $stmt->bind_param("s", $category);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $news = [];
+    while ($row = $result->fetch_assoc()) {
+        $news[] = $row;
+    }
+
+    return $news;
+}
+
 
 ?>
