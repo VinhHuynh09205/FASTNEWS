@@ -27,7 +27,6 @@ body {
     display: flex;
     justify-content: center;
     padding: 0 20px;
-    margin-left: 300px;
 }
 
 .search-results {
