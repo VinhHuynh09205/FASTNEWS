@@ -21,6 +21,10 @@
     <script src="<?php echo BASE_URL; ?>assets/js/weather.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/datetime.js"></script>
     <script src="<?php echo BASE_URL; ?>assets/js/getViews.js"></script>
+    <script>
+    const newsId = <?= json_encode($id ?? null) ?>;
+    </script>
+    <script src="<?php echo BASE_URL; ?>assets/js/comments.js"></script>
 </head>
 
 <body>
