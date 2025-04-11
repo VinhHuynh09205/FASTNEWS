@@ -1,4 +1,4 @@
-.featured4 {
+.featured4, .featured5, .featured6 {
     margin: 10px;
     padding: 15px;
     background-color: #ffffff;
@@ -7,27 +7,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.featured5 {
-    margin: 10px;
-    background-color: #ffffff;
-    flex: 3;
-    min-width: 300px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-}
-
-.featured6 {
-    margin: 10px;
-    background-color: #ffffff;
-    flex: 3;
-    min-width: 300px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-}
-
-.featured4 img,
-.featured5 img,
-.featured6 img {
+.featured4 img, .featured5 img, .featured6 img {
     width: 100%;
     height: auto; 
     border-radius: 8px;

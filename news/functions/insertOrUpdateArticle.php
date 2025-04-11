@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once 'article.php';
+    include_once 'articleProcessing.php';
 
     $id = $_POST['id'] ?? null;
     $title = $_POST['title'];
@@ -21,7 +21,7 @@
         $imageName = $oldArticle['image'] ?? null;
     }
 
-    //nếu có truyền id thì sửa
+    //nếu có truyền id thì hiên giao diện sửa
     if ($id) {
         if (updateArticle($id, $title, $content, $author, $description, $category, $imageName)) {
             $_SESSION['message'] = "Cập nhật bài viết thành công!";

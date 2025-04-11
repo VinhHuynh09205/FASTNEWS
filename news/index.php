@@ -72,8 +72,10 @@ ob_start();
                             <?= htmlspecialchars($news['title']) ?></a></h3>
                     <img src="uploads/<?= htmlspecialchars($news['image']) ?>" alt="Hình ảnh">
                     <p><?= htmlspecialchars($news['description']) ?></p>
-                    <hr class="lastestnews1-hr">
-                <?php endforeach; ?>
+                </article>
+                <hr class="lastestnews1-hr">
+            <?php endforeach; ?>
+                
         </section>
 
         <!-- Tin tức theo danh mục -->

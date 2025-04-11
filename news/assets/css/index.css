@@ -47,7 +47,7 @@ main {
   min-height: 300px;
   max-width: 95%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 20px !important;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
@@ -147,7 +147,7 @@ main {
 }
 
 .category-news article {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .category-news a:hover, .latest-news a:hover, .top-news a:hover {

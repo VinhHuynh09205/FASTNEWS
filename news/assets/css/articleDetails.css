@@ -1,6 +1,7 @@
 .article-detail {
-    max-width: 80%;
-    margin: 20px auto;
+    flex: 7;
+    max-width: 60%;
+    margin: 20px;
     padding: 30px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -64,6 +65,10 @@
     text-decoration: underline;
 }
 
+.otherArticle {
+    flex: 3;
+}
+
 /* Hover effect for article title */
 .article-title:hover {
     color: #007bff;
@@ -76,21 +81,16 @@
     color: #0056b3;
 }
 
-/* Add a shadow effect on the article container */
-.article-detail:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease-in-out;
-}
 .article-image {
     width: 100%;
-    height: 400px;
+    height: 500px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 20px;
 }
-/* Bình luận */
 /* Phần bình luận */
 .comment {
+    clear: both;
     background-color: #f4f4f4;
     padding: 20px;
     margin-top: 40px;

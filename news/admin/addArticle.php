@@ -1,5 +1,5 @@
 <?php
-include_once '../functions/article.php';
+include_once '../functions/articleProcessing.php';
 
 $id = $_GET['id'] ?? null;
 $title = $id ? "Sửa Bài Báo" : "Thêm Bài Báo";
@@ -53,7 +53,7 @@ ob_start();
             <select name="category" required>
                 <option value="">-- Chọn danh mục --</option>
                 <?php
-                $categories = ["Thế giới", "Thể thao", "Công nghệ", "Giải trí"];
+                $categories = ["Thời sự", "Thế giới", "Thể thao", "Công nghệ", "Giải trí"];
                 foreach ($categories as $cat):
                     $selected = ($articleCategory === $cat) ? 'selected' : '';
                 ?>

@@ -26,25 +26,49 @@ if (!$article) {
 
 $title = $article['title'] . " - FASTNEWS";
 
+//lấy bài viết liên quan đến chủ đề bài đang xem
+$relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 6);
+
+
 ob_start();
 ?>
 
 
 <main>
-    <article class="article-detail">
-        <h2 class="article-title"><?= htmlspecialchars($article['title']) ?></h2>
-        <p class="article-meta">
-            Tác giả: <strong><?= htmlspecialchars($article['author']) ?></strong> |
-            Ngày đăng: <?= date('d/m/Y', strtotime($article['created_at'])) ?>
-            <span style="float: right; margin-right: 10px">👁 <?= $article['views'] ?></span>
-        </p>
-        <img src="../uploads/<?= htmlspecialchars($article['image']) ?>" alt="Hình ảnh minh họa" class="article-image">
-        <div class="article-content">
-            <p><?= nl2br(htmlspecialchars($article['content'])) ?></p>
+    <div class="articleDetailFlex" style="display: flex;">
+        <article class="article-detail">
+            <h2 class="article-title"><?= htmlspecialchars($article['title']) ?></h2>
+            <p class="article-meta">
+                Tác giả: <strong><?= htmlspecialchars($article['author']) ?></strong> |
+                Ngày đăng: <?= date('d/m/Y', strtotime($article['created_at'])) ?>
+                <span style="float: right; margin-right: 10px">👁 <?= $article['views'] ?></span>
+            </p>
+            <img src="../uploads/<?= htmlspecialchars($article['image']) ?>" alt="Hình ảnh minh họa"
+                class="article-image">
+            <div class="article-content">
+                <p><?= nl2br(htmlspecialchars($article['content'])) ?></p>
+            </div>
+        </article>
+        <div class="otherArticle">
+            <h2>Bài viết liên quan</h2>
+            <hr>
+            <?php foreach ($relatedArticles as $related): ?>
+                <section class="latest-news">
+                    <article>
+                        <h3><a href="articleDetails.php?id=<?= $related['id'] ?>">
+                                <?= htmlspecialchars($related['title']) ?>
+                            </a></h3>
+                        <img src="../uploads/<?= htmlspecialchars($related['image']) ?>" alt="Hình ảnh nổi bật">
+                        <p><?= htmlspecialchars($related['description']) ?></p>
+                    </article>
+                    <hr class="lastestnews1-hr">
+                </section>
+            <?php endforeach; ?>
         </div>
-    </article>
+    </div>
 
-    <!-- Bình luận -->
+
+    <!-- cmt -->
     <section class="comment">
         <h3>Bình luận</h3>
         <div class="comment-box">
@@ -56,16 +80,13 @@ ob_start();
             <!-- Danh sách bình luận sẽ được tải động -->
         </ul>
     </section>
-
-    <!-- Bài viết liên quan (có thể nâng cấp sau) -->
-    <section class="related-articles">
-        <h3>Bài viết liên quan</h3>
-        <ul>
-            <li><a href="#">Bài viết liên quan 1</a></li>
-            <li><a href="#">Bài viết liên quan 2</a></li>
-            <li><a href="#">Bài viết liên quan 3</a></li>
-        </ul>
-    </section>
+    
+    <!-- tin xem nhiều  -->
+    <div class="most-viewed-container" style="margin-top: 20px;">
+        <div id="most-viewed-news" >
+            <?php include '../includes/mostViewed.php'; ?>
+        </div>
+    </div>
 </main>
 
 <?php

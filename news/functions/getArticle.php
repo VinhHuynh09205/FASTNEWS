@@ -60,15 +60,19 @@ function getArticleById($conn, $id) {
 
     return null;
 }
-function getNewsByCategoryFromDB($conn, $category) {
-    $sql = "SELECT * FROM news WHERE category = ? ORDER BY created_at DESC LIMIT 10";
 
-    $stmt = $conn->prepare($sql);
-    if (!$stmt) {
-        die("Lỗi prepare(): " . $conn->error);
+//lấy những bài viết theo chủ đề 
+function getNewsByCategoryFromDB($conn, $category, $excludeId = null, $limit = 10) {
+    if ($excludeId !== null) {
+        $sql = "SELECT * FROM news WHERE category = ? AND id != ? ORDER BY created_at DESC LIMIT ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sii", $category, $excludeId, $limit);
+    } else {
+        $sql = "SELECT * FROM news WHERE category = ? ORDER BY created_at DESC LIMIT ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("si", $category, $limit);
     }
 
-    $stmt->bind_param("s", $category);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -79,6 +83,5 @@ function getNewsByCategoryFromDB($conn, $category) {
 
     return $news;
 }
-
 
 ?>
