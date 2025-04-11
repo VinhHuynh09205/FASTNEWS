@@ -10,9 +10,14 @@
         <span class="separator">|</span>
         <div id="weather">Đang tải nhiệt độ...</div>
         <div class="icons">
+          <!-- search button -->
           <div class="search-container">
-            <input action="#" method="POST" type="text" placeholder="Tìm kiếm" id="keyword" name="q">
-            <i class="fa fa-search" id="search-icon"></i>
+            <form action="<?php echo BASE_URL; ?>page/search.php" method="GET" class="search-form">
+              <input type="text" name="q" placeholder="Tìm kiếm" class="search-input">
+              <button type="submit" class="search-btn">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
           </div>
         </div>
       </div>
