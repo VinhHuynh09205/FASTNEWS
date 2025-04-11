@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//giữ thanh menu đầu trang
 window.addEventListener("scroll", function () {
   var menu = document.getElementById("menu");
 
@@ -85,5 +86,17 @@ window.addEventListener("scroll", function () {
       menu.style.position = "relative";
       menu.style.boxShadow = "none";
   }
+});
+
+//khi không có dữ liệu trong ô tìm kiếm thì không cho ấn tìm kiếm
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.search-form');
+  const input = document.querySelector('.search-input');
+
+  form.addEventListener('submit', function (e) {
+    if (input.value.trim() === '') {
+      e.preventDefault();
+    }
+  });
 });
 

@@ -22,12 +22,11 @@ ob_start();
 <main>
     <?php if ($keyword !== '' && !empty($results)): ?>
         <h2 class="search-title">Kết quả tìm kiếm cho: <em><?= htmlspecialchars($keyword) ?></em></h2>
+        <hr style="margin-bottom: 20px; width: 90%">
     <?php endif; ?>
 
     <div class="search-container">
-        <?php if ($keyword === ''): ?>
-            <p class="search-message">Vui lòng nhập từ khóa để tìm kiếm.</p>
-        <?php elseif (empty($results)): ?>
+        <?php if (empty($results)): ?>
             <p class="search-message">Không tìm thấy kết quả phù hợp với từ khóa: <strong><?= htmlspecialchars($keyword) ?></strong></p>
         <?php else: ?>
             <div class="search-results">
