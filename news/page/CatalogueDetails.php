@@ -27,8 +27,7 @@ ob_start();
 ?>
 
 <main>
-    <h2><?= htmlspecialchars($category) ?></h2>
-    <hr>
+    <h1 style="margin-left: 20px;"><?= htmlspecialchars($category) ?></h1>
 
     <div class="news-section">
         <section class="featured">

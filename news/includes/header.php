@@ -24,7 +24,7 @@
   <nav id="menu">
     <ul>
       <li>
-        <a href="../index.php"><i class="fa fa-home"></i> Trang chủ</a>
+        <a href="<?php echo BASE_URL; ?>index.php"><i class="fa fa-home"></i> Trang chủ</a>
       </li>
       <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=Thời sự">Thời sự</a></li>
       <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=Thế giới">Thế giới</a></li>

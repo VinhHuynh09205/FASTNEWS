@@ -15,7 +15,7 @@ ob_start(); // Bắt đầu lưu output
             <td colspan="4" align="left">
                 <input id="xoahet" value="Xóa đã chọn" type="button">
             </td>
-            <td colspan="2" align="center" nowrap>
+            <td colspan="3" align="center" nowrap>
                 <a href="addArticle.php">Thêm bài mới</a>
             </td>
         </tr>
@@ -24,7 +24,7 @@ ob_start(); // Bắt đầu lưu output
             <td>Tên bài</td>
             <td>Chủ đề</td>
             <td>Ngày thêm</td>
-            <td colspan="2">Thao tác</td>
+            <td colspan="3">Thao tác</td>
         </tr>
 
         <?php while ($row = $result->fetch_assoc()): ?>
@@ -35,9 +35,18 @@ ob_start(); // Bắt đầu lưu output
                 <td><?= htmlspecialchars($row['title']) ?></td>
                 <td><?= htmlspecialchars($row['category']) ?></td>
                 <td><?= $row['created_at'] ?></td>
+                <td align="center">
+                    <a href="../functions/addFeaturedArticle.php?id=<?= $row['id'] ?>"
+                        onclick="return confirm('<?= $row['is_featured'] ? 'Bạn có muốn gỡ khỏi danh sách nổi bật?' : 'Đặt bài này thành nổi bật?' ?>')"
+                        style="font-size: 20px; text-decoration: none;">
+                        <?= $row['is_featured'] ? '⭐' : '☆' ?>
+                    </a>
+                </td>
+
                 <td align="center"><a href="addArticle.php?id=<?= $row['id'] ?>">Sửa</a></td>
                 <td align="center">
-                    <a href="../functions/deleteArticle.php?id=<?= $row['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
+                    <a href="../functions/deleteArticle.php?id=<?= $row['id'] ?>"
+                        onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
                 </td>
             </tr>
         <?php endwhile; ?>
@@ -45,6 +54,6 @@ ob_start(); // Bắt đầu lưu output
 </form>
 
 <?php
-$content = ob_get_clean(); 
-include '../includes/masterAdmin.php'; 
+$content = ob_get_clean();
+include '../includes/masterAdmin.php';
 ?>

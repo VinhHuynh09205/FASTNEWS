@@ -31,7 +31,7 @@ ob_start();
 ?>
 
 <main>
-    <h2>BÀI VIẾT NỔI BẬT</h2>
+    <h2 style="margin-left: 10px;">BÀI VIẾT NỔI BẬT</h2>
     <div class="news-section">
         <!-- featured 1 -->
         <section class="featured">
@@ -88,7 +88,7 @@ ob_start();
                 $newsInCategory = getNewsByCategory($remainingNews, $category, $excludedIds);
                 ?>
                 <div class="topic<?= $topicIndex ?>">
-                    <a class="categoryHeader" href="#"><?= htmlspecialchars($category) ?></a>
+                    <a class="categoryHeader" href="page/CatalogueDetails.php?category=<?= urlencode($category) ?>"><?= htmlspecialchars($category) ?></a>
                     <div class="category-content">
                         <?php foreach (array_slice($newsInCategory, 0, 3) as $news): ?>
                             <article>
