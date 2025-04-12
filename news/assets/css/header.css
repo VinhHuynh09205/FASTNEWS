@@ -30,6 +30,8 @@ nav ul li a {
   align-items: center;
   padding: 10px 20px;
   white-space: nowrap;
+  flex-wrap: wrap;
+  justify-content: flex-start !important;
 }
 
 .header-container h1 {

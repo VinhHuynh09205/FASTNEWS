@@ -1,7 +1,9 @@
+
+
 /* Định dạng phần "Xem nhiều" */
 #most-viewed-news {
-  width: 100%;
-  max-width: 600px;
+  margin: 0 auto;
+  max-width: 90%;
   background: #f8f8f8;
   padding: 15px;
   border-radius: 8px;

@@ -1,4 +1,4 @@
-.featured4, .featured5, .featured6 {
+.featured4 {
     margin: 10px;
     padding: 15px;
     background-color: #ffffff;
@@ -7,9 +7,9 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.featured4 img, .featured5 img, .featured6 img {
+.featured4 img{
     width: 100%;
-    height: auto; 
+    height: 200px; 
     border-radius: 8px;
     object-fit: cover; 
     overflow: hidden;

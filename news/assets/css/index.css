@@ -8,7 +8,7 @@ body {
 }
   
 /* thu giãn màn hình */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 650px) {
   .news-section2,
   .news-section3 {
     flex-direction: column;
@@ -40,6 +40,28 @@ body {
 
   .icons {
     clear: both;
+  }
+
+  .most-viewed-container {
+    flex-direction: column;
+  }
+
+  .most-viewed-left,
+  .most-viewed-right {
+    max-width: 100%;
+  }
+
+  .category-news {
+    border-left: none !important;
+  }
+
+  .articleDetailFlex {
+    display: block !important;
+  }
+
+  .article-detail {
+    display: block !important;
+    max-width: 90% !important;
   }
 }
 

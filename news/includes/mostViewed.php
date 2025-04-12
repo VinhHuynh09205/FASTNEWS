@@ -1,8 +1,19 @@
 <?php
 include_once __DIR__ . '/../functions/database.php';
 
-$sql = "SELECT id, title, views FROM news ORDER BY views DESC LIMIT 10";
-$result = $conn->query($sql);
+// Lấy category nếu có
+$category = $_GET['category'] ?? null;
+
+if ($category) {
+    $sql = "SELECT id, title, views FROM news WHERE category = ? ORDER BY views DESC LIMIT 10";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $category);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    $sql = "SELECT id, title, views FROM news ORDER BY views DESC LIMIT 10";
+    $result = $conn->query($sql);
+}
 
 echo '<h2>Tin Xem Nhiều</h2>';
 

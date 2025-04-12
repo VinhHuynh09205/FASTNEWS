@@ -27,7 +27,7 @@ if (!$article) {
 $title = $article['title'] . " - FASTNEWS";
 
 //lấy bài viết liên quan đến chủ đề bài đang xem
-$relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 6);
+$relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 20);
 
 
 ob_start();
@@ -36,6 +36,7 @@ ob_start();
 
 <main>
     <div class="articleDetailFlex" style="display: flex;">
+        <!-- chi tiết bài báo -->
         <article class="article-detail">
             <h2 class="article-title"><?= htmlspecialchars($article['title']) ?></h2>
             <p class="article-meta">
@@ -49,10 +50,11 @@ ob_start();
                 <p><?= nl2br(htmlspecialchars($article['content'])) ?></p>
             </div>
         </article>
+        <!-- bài viết liên quan -->
         <div class="otherArticle">
             <h2>Bài viết liên quan</h2>
             <hr>
-            <?php foreach ($relatedArticles as $related): ?>
+            <?php foreach (array_slice($relatedArticles, 0, 10) as $related): ?>
                 <section class="latest-news">
                     <article>
                         <h3><a href="articleDetails.php?id=<?= $related['id'] ?>">
@@ -86,6 +88,18 @@ ob_start();
         <div id="most-viewed-news" >
             <?php include '../includes/mostViewed.php'; ?>
         </div>
+        <?php foreach (array_slice($relatedArticles, 11, 20) as $related): ?>
+                <section class="latest-news" >
+                    <article style="max-width: 80% !important; margin-left: 20px;">
+                        <img src="../uploads/<?= htmlspecialchars($related['image']) ?>" alt="Hình ảnh nổi bật">
+                        <h3><a href="articleDetails.php?id=<?= $related['id'] ?>">
+                                <?= htmlspecialchars($related['title']) ?>
+                            </a></h3>
+                        <p><?= htmlspecialchars($related['description']) ?></p>
+                    </article>
+                    <hr class="lastestnews1-hr">
+                </section>
+            <?php endforeach; ?>
     </div>
 </main>
 
