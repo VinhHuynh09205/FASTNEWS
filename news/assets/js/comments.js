@@ -36,15 +36,31 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 const list = document.getElementById("comment-list");
                 if (!list) return;
-
+    
                 list.innerHTML = "";
                 data.forEach(cmt => {
                     const li = document.createElement("li");
-                    li.textContent = `${cmt.name}: ${cmt.content}`;
+                    li.innerHTML = `
+                        <div style="display: flex; justify-content: space-between;">
+                            <strong>${cmt.name}</strong>
+                            <small style="color: gray;">${formatDateTime(cmt.created_at)}</small>
+                        </div>
+                        <span>${cmt.content}</span>
+                    `;
                     list.appendChild(li);
                 });
             });
     }
+    function formatDateTime(datetimeStr) {
+        const date = new Date(datetimeStr);
+        const options = {
+            year: 'numeric', month: '2-digit', day: '2-digit',
+            hour: '2-digit', minute: '2-digit',
+            hour12: false
+        };
+        return date.toLocaleString('vi-VN', options);
+    }
+        
 
     loadComments();
 });
