@@ -1,13 +1,29 @@
 <?php
 include '../functions/database.php';
 
-$result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
+$search = isset($_GET['search']) ? trim($_GET['search']) : '';
+
+if ($search !== '') {
+    $stmt = $conn->prepare("SELECT * FROM news WHERE title LIKE ? ORDER BY created_at DESC");
+    $searchParam = '%' . $search . '%';
+    $stmt->bind_param("s", $searchParam);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    $result = $conn->query("SELECT * FROM news ORDER BY created_at DESC");
+}
+
 $title = "Quản lý bài viết - FASTNEWS";
 
-ob_start(); // Bắt đầu lưu output
+ob_start();
 ?>
 
 <h1 style="text-align: center;"> QUẢN LÝ BÀI VIẾT</h1>
+<form method="get" id="search-form">
+    <input type="text" name="search" placeholder="Tìm bài viết..."
+        value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+    <button type="submit">Tìm</button>
+</form>
 <hr style="width: 90%; margin-bottom: 30px;">
 <form id="form1" method="post">
     <table align="center" border="1" cellpadding="4" cellspacing="0" width="1000">
@@ -32,19 +48,24 @@ ob_start(); // Bắt đầu lưu output
                 <td align="center">
                     <input name="chon" value="<?= $row['id'] ?>" class="chon" type="checkbox">
                 </td>
-                <td><?= htmlspecialchars($row['title']) ?></td>
+                <td>
+                    <a href="../page/articleDetails.php?id=<?= $row['id'] ?>">
+                        <?= htmlspecialchars($row['title']) ?>
+                    </a>
+                </td>
                 <td><?= htmlspecialchars($row['category']) ?></td>
                 <td><?= $row['created_at'] ?></td>
                 <td align="center">
+                    <!-- thêm bài viết nổi bâtj -->
                     <a href="../functions/addFeaturedArticle.php?id=<?= $row['id'] ?>"
                         onclick="return confirm('<?= $row['is_featured'] ? 'Bạn có muốn gỡ khỏi danh sách nổi bật?' : 'Đặt bài này thành nổi bật?' ?>')"
                         style="font-size: 20px; text-decoration: none;">
                         <?= $row['is_featured'] ? '⭐' : '☆' ?>
                     </a>
                 </td>
-
                 <td align="center"><a href="addArticle.php?id=<?= $row['id'] ?>">Sửa</a></td>
                 <td align="center">
+                    <!-- alert confirm xóa bài viết  -->
                     <a href="../functions/deleteArticle.php?id=<?= $row['id'] ?>"
                         onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
                 </td>

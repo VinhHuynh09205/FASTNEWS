@@ -4,7 +4,7 @@ include 'database.php';
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = (int)$_GET['id'];
 
-    // Lấy trạng thái hiện tại
+    //lấy trạng thái hiện tại của bài báo gán vào biến row
     $stmt = $conn->prepare("SELECT is_featured FROM news WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();

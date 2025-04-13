@@ -1,9 +1,9 @@
 <?php
 include "database.php";
 
-//lấy 3 bài nổi bật
+// Lấy 3 bài nổi bật mới nhất
 function getFeaturedNews($conn) {
-    $sql = "SELECT * FROM news WHERE is_featured = 1 ORDER BY created_at DESC LIMIT 3";
+    $sql = "SELECT * FROM news ORDER BY is_featured DESC, created_at DESC LIMIT 3";
     $result = mysqli_query($conn, $sql);
     $Featurednews = [];
 
@@ -12,9 +12,10 @@ function getFeaturedNews($conn) {
             $Featurednews[] = $row;
         }
     }
-
     return $Featurednews;
 }
+
+
 
 //lấy tất cả bài viết
 function getAllNews($conn) {
@@ -27,7 +28,6 @@ function getAllNews($conn) {
             $allNews[] = $row;
         }
     }
-
     return $allNews;
 }
 
@@ -57,7 +57,6 @@ function getArticleById($conn, $id) {
     if ($result && mysqli_num_rows($result) > 0) {
         return mysqli_fetch_assoc($result);
     }
-
     return null;
 }
 
@@ -72,7 +71,6 @@ function getNewsByCategoryFromDB($conn, $category, $excludeId = null, $limit = 1
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("si", $category, $limit);
     }
-
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -80,7 +78,6 @@ function getNewsByCategoryFromDB($conn, $category, $excludeId = null, $limit = 1
     while ($row = $result->fetch_assoc()) {
         $news[] = $row;
     }
-
     return $news;
 }
 

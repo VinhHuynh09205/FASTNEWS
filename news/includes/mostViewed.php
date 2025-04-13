@@ -26,7 +26,7 @@ while ($row = $result->fetch_assoc()) {
     echo <<<HTML
     <div class="most-viewed-item">
         <span>{$rank}</span>
-        <a href="article.php?id={$id}">{$title}</a>
+        <a href="../page/articleDetails.php?id={$id}">{$title}</a>
         <span style="margin-left: 10px" class="comment-count">👁 {$views}</span>
     </div>
     HTML;

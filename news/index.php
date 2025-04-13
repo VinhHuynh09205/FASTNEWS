@@ -16,8 +16,8 @@ foreach ($allNews as $news) {
     if (in_array($news['id'], $featuredIds))
         continue;
 
-    if (count($latestNews) < 9) {
-        $latestNews[] = $news; //lấy 10 bài mới nhất để hiển thị
+    if (count($latestNews) < 20) {
+        $latestNews[] = $news; //lấy 20 bài mới nhất để hiển thị
     } else {
         $remainingNews[] = $news; //lấy các bài còn lại để lọc theo danh mục
     }
@@ -66,7 +66,7 @@ ob_start();
         <section class="latest-news">
             <h2>TIN MỚI NHẤT</h2>
             <hr>
-            <?php foreach ($latestNews as $news): ?>
+            <?php foreach (array_slice($latestNews, 0, 9) as $news): ?>
                 <article>
                     <h3><a href="page/articleDetails.php?id=<?= $news['id'] ?>">
                             <?= htmlspecialchars($news['title']) ?></a></h3>
@@ -75,7 +75,6 @@ ob_start();
                 </article>
                 <hr class="lastestnews1-hr">
             <?php endforeach; ?>
-                
         </section>
 
         <!-- Tin tức theo danh mục -->
@@ -115,8 +114,18 @@ ob_start();
         <?php include 'includes/mostViewed.php'; ?>
         </div>
     </div>
+    <section class="latest-news">
+            <?php foreach (array_slice($latestNews, 10, 20) as $news): ?>
+                <article>
+                    <h3><a href="page/articleDetails.php?id=<?= $news['id'] ?>">
+                            <?= htmlspecialchars($news['title']) ?></a></h3>
+                    <img src="uploads/<?= htmlspecialchars($news['image']) ?>" alt="Hình ảnh">
+                    <p><?= htmlspecialchars($news['description']) ?></p>
+                </article>
+                <hr class="lastestnews1-hr">
+            <?php endforeach; ?>
+        </section>
 </main>
-
 <?php
 $content = ob_get_clean();
 include 'includes/master.php';

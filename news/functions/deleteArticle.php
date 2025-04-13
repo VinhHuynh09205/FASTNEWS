@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once 'article.php';
+include_once 'ArticleProcessing.php';
 
 $listid = $_GET['listid'] ?? null;
 $id = $_GET['id'] ?? null;
