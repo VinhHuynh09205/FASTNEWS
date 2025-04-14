@@ -32,7 +32,7 @@ ob_start();
                 <input class="deleteButton" id="xoahet" value="Xóa đã chọn" type="button">
             </td>
             <td colspan="3" align="center" nowrap>
-                <button style = "padding: 5px 10px 5px 10px;"><a href="addArticle.php">Thêm bài mới</a></button>
+                <a href="addArticle.php">Thêm bài mới</a>
             </td>
         </tr>
         <tr style="background-color:#444; color: white; text-align: center;">
