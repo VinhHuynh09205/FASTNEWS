@@ -29,10 +29,10 @@ ob_start();
     <table align="center" border="1" cellpadding="4" cellspacing="0" width="1000">
         <tr>
             <td colspan="4" align="left">
-                <input id="xoahet" value="Xóa đã chọn" type="button">
+                <input id="xoahet" value="Xóa đã chọn" type="button" STYLE ="background-color: #EE0000; color:white">
             </td>
             <td colspan="3" align="center" nowrap>
-                <a href="addArticle.php">Thêm bài mới</a>
+                <a id="btn-add-article" STYLE ="background-color: #e0e0e0" href="addArticle.php">Thêm bài mới</a>
             </td>
         </tr>
         <tr style="background-color:#444; color: white; text-align: center;">
@@ -63,10 +63,10 @@ ob_start();
                         <?= $row['is_featured'] ? '⭐' : '☆' ?>
                     </a>
                 </td>
-                <td align="center"><a href="addArticle.php?id=<?= $row['id'] ?>">Sửa</a></td>
+                <td align="center"><a id="btn-edit" STYLE ="background-color: #e0e0e0" href="addArticle.php?id=<?= $row['id'] ?>">Sửa</a></td>
                 <td align="center">
                     <!-- alert confirm xóa bài viết  -->
-                    <a href="../functions/deleteArticle.php?id=<?= $row['id'] ?>"
+                    <a id="btn-delete" STYLE ="background-color: #e0e0e0" href="../functions/deleteArticle.php?id=<?= $row['id'] ?>"
                         onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
                 </td>
             </tr>
