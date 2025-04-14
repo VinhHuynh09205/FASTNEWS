@@ -62,7 +62,7 @@ ob_start();
             </select>
         </div>
 
-        <button type="submit"><?= $title ?></button>
+        <button class="button" type="submit"><?= $title ?></button>
     </form>
 </div>
 

@@ -29,10 +29,10 @@ ob_start();
     <table align="center" border="1" cellpadding="4" cellspacing="0" width="1000">
         <tr>
             <td colspan="4" align="left">
-                <input id="xoahet" value="Xóa đã chọn" type="button">
+                <input class="deleteButton" id="xoahet" value="Xóa đã chọn" type="button">
             </td>
             <td colspan="3" align="center" nowrap>
-                <a href="addArticle.php">Thêm bài mới</a>
+                <button style = "padding: 5px 10px 5px 10px;"><a href="addArticle.php">Thêm bài mới</a></button>
             </td>
         </tr>
         <tr style="background-color:#444; color: white; text-align: center;">
@@ -48,26 +48,30 @@ ob_start();
                 <td align="center">
                     <input name="chon" value="<?= $row['id'] ?>" class="chon" type="checkbox">
                 </td>
+                <!-- tên bài -->
                 <td>
                     <a href="../page/articleDetails.php?id=<?= $row['id'] ?>">
                         <?= htmlspecialchars($row['title']) ?>
                     </a>
                 </td>
-                <td><?= htmlspecialchars($row['category']) ?></td>
-                <td><?= $row['created_at'] ?></td>
+                <!-- chủ đề -->
+                <td style="white-space: nowrap; padding: 10px;"><?= htmlspecialchars($row['category']) ?></td>
+                <!-- ngày thêm -->
+                <td style="white-space: nowrap; padding: 10px;"><?= $row['created_at'] ?></td>
+                <!-- thêm bài viết nổi bât -->
                 <td align="center">
-                    <!-- thêm bài viết nổi bâtj -->
                     <a href="../functions/addFeaturedArticle.php?id=<?= $row['id'] ?>"
                         onclick="return confirm('<?= $row['is_featured'] ? 'Bạn có muốn gỡ khỏi danh sách nổi bật?' : 'Đặt bài này thành nổi bật?' ?>')"
                         style="font-size: 20px; text-decoration: none;">
                         <?= $row['is_featured'] ? '⭐' : '☆' ?>
                     </a>
                 </td>
-                <td align="center"><a href="addArticle.php?id=<?= $row['id'] ?>">Sửa</a></td>
+                <td align="center"><button id="editButton"><a href="addArticle.php?id=<?= $row['id'] ?>">Sửa</a></td></button>
                 <td align="center">
                     <!-- alert confirm xóa bài viết  -->
-                    <a href="../functions/deleteArticle.php?id=<?= $row['id'] ?>"
-                        onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
+                     <button class="deleteButton">
+                        <a href="../functions/deleteArticle.php?id=<?= $row['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
+                    </button>
                 </td>
             </tr>
         <?php endwhile; ?>

@@ -6,7 +6,9 @@
       </a>
     </h1>
     <span class="separator">|</span>
-    <span id="datetime"></span>
+    <div id="datetime">Đang tải thời gian...</div>
+    <span class="separator">|</span>
+    <div id="weather">Đang tải nhiệt độ...</div>
     
     <div class="logout">
       <a href="../functions/logout.php" class="logout-button">

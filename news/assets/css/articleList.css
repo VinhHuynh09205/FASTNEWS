@@ -23,3 +23,24 @@
     cursor: pointer;
     margin-left: 10px !important;
 }
+
+.deleteButton {
+    background-color: rgb(254, 96, 96);
+    color: white;
+    border: solid 0.2px black;
+    border-radius: 3px;
+    padding: 5px 10px 5px 10px;
+}
+
+.deleteButton a {
+    text-decoration: none;
+    color: white;
+}
+
+#editButton {
+    background-color: yellow;
+    color: white;
+    border: solid 0.2px black;
+    border-radius: 3px;
+    padding: 5px 10px 5px 10px;
+}
