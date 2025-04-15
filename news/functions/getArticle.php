@@ -15,8 +15,6 @@ function getFeaturedNews($conn) {
     return $Featurednews;
 }
 
-
-
 //lấy tất cả bài viết
 function getAllNews($conn) {
     $sql = "SELECT * FROM news ORDER BY created_at DESC";
