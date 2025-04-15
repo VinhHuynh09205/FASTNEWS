@@ -11,12 +11,12 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $id = (int) $_GET['id'];
 
-//Tăng lượt xem
+// Tăng lượt xem
 $stmt = $conn->prepare("UPDATE news SET views = views + 1 WHERE id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 
-//Lấy thông tin bài viết
+// Lấy thông tin bài viết
 $article = getArticleById($conn, $id);
 
 if (!$article) {
@@ -24,15 +24,14 @@ if (!$article) {
     exit;
 }
 
+// Cập nhật title trang
 $title = $article['title'] . " - FASTNEWS";
 
-//lấy bài viết liên quan đến chủ đề bài đang xem
+// Lấy bài viết liên quan đến chủ đề bài đang xem
 $relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 20);
-
 
 ob_start();
 ?>
-
 
 <main>
     <div class="articleDetailFlex" style="display: flex;">
@@ -69,7 +68,6 @@ ob_start();
         </div>
     </div>
 
-
     <!-- cmt -->
     <section class="comment">
         <h3>Bình luận</h3>
@@ -82,7 +80,7 @@ ob_start();
             <!-- Danh sách bình luận sẽ được tải động -->
         </ul>
     </section>
-    
+
     <!-- tin xem nhiều  -->
     <div class="most-viewed-container" style="margin-top: 20px;">
         <div id="most-viewed-news" >
@@ -102,6 +100,9 @@ ob_start();
             <?php endforeach; ?>
     </div>
 </main>
+
+<!-- Input ẩn chứa news_id -->
+<input type="hidden" id="news-id" value="<?= $article['id'] ?>">
 
 <?php
 $content = ob_get_clean();
