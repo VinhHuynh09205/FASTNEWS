@@ -19,14 +19,14 @@ echo '<h2>Tin Xem Nhiều</h2>';
 
 $rank = 1;
 while ($row = $result->fetch_assoc()) {
-    $title = htmlspecialchars($row['title']);
+    $newsTitle = htmlspecialchars($row['title']);
     $id = $row['id'];
     $views = $row['views'];
 
     echo <<<HTML
     <div class="most-viewed-item">
         <span>{$rank}</span>
-        <a href="../page/articleDetails.php?id={$id}">{$title}</a>
+        <a href="../page/articleDetails.php?id={$id}">{$newsTitle}</a>
         <span style="margin-left: 10px" class="comment-count">👁 {$views}</span>
     </div>
     HTML;

@@ -27,6 +27,10 @@ body {
     margin: 10px auto;
   }
 
+  .featured4 img {
+    height: 400px !important;
+  }
+
   .top-news {
     width: 95%; 
     margin: 0 10px 0 0; 
@@ -52,6 +56,7 @@ body {
   }
 
   .category-news {
+    width: 100% !important;
     border-left: none !important;
   }
 
@@ -62,6 +67,16 @@ body {
   .article-detail {
     display: block !important;
     max-width: 90% !important;
+  }
+
+  .category-news p, .latest-news p, .top-news p {
+    color:#212121 !important;
+    font-size: large !important;
+  }
+
+  .latest-news img, .top-news p {
+    width: 300px !important;
+    height: 200px !important;
   }
 }
 

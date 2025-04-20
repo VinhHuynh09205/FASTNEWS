@@ -3,6 +3,9 @@ include '../functions/database.php';
 include '../functions/getArticle.php';
 
 $category = isset($_GET['category']) ? $_GET['category'] : '';
+$title = $category . ' - FASTNEWS';
+
+
 
 if (!$category) {
     echo "Không tìm thấy danh mục.";
@@ -22,7 +25,7 @@ $featured4 = array_splice($allNews, 0, 3); // 3 bài tiếp theo
 $sectionLeft = array_splice($allNews, 0, 10); // 10 bài tiếp theo
 $sectionRight = array_splice($allNews, 0, 15); // 10 bài tiếp theo
 
-$title = strtoupper($category);
+
 ob_start();
 ?>
 
@@ -30,6 +33,7 @@ ob_start();
     <h1 style="margin-left: 20px;"><?= htmlspecialchars($category) ?></h1>
 
     <div class="news-section">
+    
         <section class="featured">
             <article>
                 <img src="../uploads/<?= htmlspecialchars($featured['image']) ?>" alt="Hình ảnh nổi bật">

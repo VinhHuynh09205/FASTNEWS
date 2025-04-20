@@ -1,5 +1,4 @@
 <?php
-$title = "Chi tiết bài báo - FASTNEWS";
 
 include '../functions/database.php';
 include '../functions/getArticle.php';
@@ -11,12 +10,12 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $id = (int) $_GET['id'];
 
-// Tăng lượt xem
+//Tăng lượt xem
 $stmt = $conn->prepare("UPDATE news SET views = views + 1 WHERE id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 
-// Lấy thông tin bài viết
+//Lấy thông tin bài viết
 $article = getArticleById($conn, $id);
 
 if (!$article) {
@@ -24,10 +23,10 @@ if (!$article) {
     exit;
 }
 
-// Cập nhật title trang
-$title = $article['title'] . " - FASTNEWS";
+//Cập nhật title trang
+$title = $article['title'] . ' - FASTNEWS';;
 
-// Lấy bài viết liên quan đến chủ đề bài đang xem
+//Lấy bài viết liên quan đến chủ đề bài đang xem
 $relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 20);
 
 ob_start();
@@ -101,8 +100,7 @@ ob_start();
     </div>
 </main>
 
-<!-- Input ẩn chứa news_id -->
-<input type="hidden" id="news-id" value="<?= $article['id'] ?>">
+<!-- <input type="hidden" id="news-id" value="<?= $article['id'] ?>"> -->
 
 <?php
 $content = ob_get_clean();
