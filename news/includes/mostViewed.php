@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__ . '/../functions/database.php';
+include 'config.php';
 
 // Lấy category nếu có
 $category = $_GET['category'] ?? null;
@@ -22,11 +23,12 @@ while ($row = $result->fetch_assoc()) {
     $newsTitle = htmlspecialchars($row['title']);
     $id = $row['id'];
     $views = $row['views'];
+    $link = BASE_URL . "page/articleDetails.php?id=" . $id;
 
     echo <<<HTML
     <div class="most-viewed-item">
         <span>{$rank}</span>
-        <a href="../page/articleDetails.php?id={$id}">{$newsTitle}</a>
+        <a href="{$link}">{$newsTitle}</a>
         <span style="margin-left: 10px" class="comment-count">👁 {$views}</span>
     </div>
     HTML;

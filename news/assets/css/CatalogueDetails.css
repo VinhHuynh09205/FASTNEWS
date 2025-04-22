@@ -3,7 +3,7 @@
     padding: 15px;
     background-color: #ffffff;
     flex: 3;
-    min-width: 300px;
+    /* min-width: 300px; */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 

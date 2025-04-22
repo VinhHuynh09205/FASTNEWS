@@ -24,6 +24,12 @@
     margin-left: 10px !important;
 }
 
+#selectCategories {
+    padding: 6px 10px; 
+    border: solid 0.5px #ccc; 
+    border-radius: 4px;
+}
+
 .deleteButton {
     background-color: rgb(254, 96, 96);
     color: white;

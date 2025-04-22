@@ -8,7 +8,7 @@ body {
 }
   
 /* thu giãn màn hình */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .news-section2,
   .news-section3 {
     flex-direction: column;
