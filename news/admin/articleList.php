@@ -59,7 +59,7 @@ ob_start();
 <hr style="width: 90%; margin-bottom: 30px;">
 
 <form id="form1" method="post">
-    <table align="center" border="1" cellpadding="4" cellspacing="0" width="1000">
+    <table align="center" border="1" cellpadding="4" cellspacing="0" width="100%">
         <tr>
             <td colspan="4" align="left">
                 <input class="deleteButton" id="xoahet" value="Xóa đã chọn" type="button">

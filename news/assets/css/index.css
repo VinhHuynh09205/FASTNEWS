@@ -6,79 +6,6 @@ body {
   max-width: 1250px;
   min-width: 750px;
 }
-  
-/* thu giãn màn hình */
-@media screen and (max-width: 750px) {
-  .news-section2,
-  .news-section3 {
-    flex-direction: column;
-    width: 95%;
-  }
-
-  .news-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .featured,
-  .featured2,
-  .featured3 {
-    width: 95% !important;
-    margin: 10px auto;
-  }
-
-  .featured4 img {
-    height: 400px !important;
-  }
-
-  .top-news {
-    width: 95%; 
-    margin: 0 10px 0 0; 
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .category-content article {
-    flex: 1 1 calc(50% - 20px);
-  }
-
-  .icons {
-    clear: both;
-  }
-
-  .most-viewed-container {
-    flex-direction: column;
-  }
-
-  .most-viewed-left,
-  .most-viewed-right {
-    max-width: 100%;
-  }
-
-  .category-news {
-    width: 100% !important;
-    border-left: none !important;
-  }
-
-  .articleDetailFlex {
-    display: block !important;
-  }
-
-  .article-detail {
-    display: block !important;
-    max-width: 90% !important;
-  }
-
-  .category-news p, .latest-news p, .top-news p {
-    color:#212121 !important;
-    font-size: large !important;
-  }
-
-  .latest-news img, .top-news p {
-    width: 300px !important;
-    height: 200px !important;
-  }
-}
 
 main {
   min-height: 300px;
@@ -87,6 +14,10 @@ main {
   padding: 20px !important;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  margin-left: 20px;
 }
 
 .category-news p, .latest-news p, .top-news p {
@@ -236,7 +167,7 @@ main {
 }
 .categoryHeader {
   padding-bottom: 3px;
-  font-size: large !important;
+  font-size: large;
   border-bottom: solid 1px black !important;
 }
 .category-content {

@@ -24,7 +24,8 @@ if (!$article) {
 }
 
 //Cập nhật title trang
-$title = $article['title'] . ' - FASTNEWS';;
+$title = $article['title'] . ' - FASTNEWS';
+;
 
 //Lấy bài viết liên quan đến chủ đề bài đang xem
 $relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 20);
@@ -33,7 +34,7 @@ ob_start();
 ?>
 
 <main>
-    <div class="articleDetailFlex" style="display: flex;">
+    <div class="articleDetailFlex">
         <!-- chi tiết bài báo -->
         <article class="article-detail">
             <h2 class="article-title"><?= htmlspecialchars($article['title']) ?></h2>
@@ -47,6 +48,19 @@ ob_start();
             <div class="article-content">
                 <p><?= nl2br(htmlspecialchars($article['content'])) ?></p>
             </div>
+            <!-- cmt -->
+            <section class="comment">
+                <h3>Bình luận</h3>
+                <div class="comment-box">
+                    <input type="text" id="username" placeholder="Nhập tên của bạn">
+                    <textarea id="comment" placeholder="Viết bình luận..."></textarea>
+                    <button id="submit-comment">Gửi</button>
+                </div>
+                <hr>
+                <ul id="comment-list">
+                    <!-- Danh sách bình luận sẽ được tải động -->
+                </ul>
+            </section>
         </article>
         <!-- bài viết liên quan -->
         <div class="otherArticle">
@@ -65,42 +79,30 @@ ob_start();
                 </section>
             <?php endforeach; ?>
         </div>
-    </div>
 
-    <!-- cmt -->
-    <section class="comment">
-        <h3>Bình luận</h3>
-        <div class="comment-box">
-            <input type="text" id="username" placeholder="Nhập tên của bạn">
-            <textarea id="comment" placeholder="Viết bình luận..."></textarea>
-            <button id="submit-comment">Gửi</button>
-        </div>
-        <ul id="comment-list">
-            <!-- Danh sách bình luận sẽ được tải động -->
-        </ul>
-    </section>
+    </div>
 
     <!-- tin xem nhiều  -->
     <div class="most-viewed-container" style="margin-top: 20px;">
-        <div id="most-viewed-news" >
+        <div id="most-viewed-news">
             <?php include '../includes/mostViewed.php'; ?>
         </div>
         <?php foreach (array_slice($relatedArticles, 11, 20) as $related): ?>
-                <section class="latest-news" >
-                    <article style="max-width: 80% !important; margin-left: 20px;">
-                        <img src="../uploads/<?= htmlspecialchars($related['image']) ?>" alt="Hình ảnh nổi bật">
-                        <h3><a href="articleDetails.php?id=<?= $related['id'] ?>">
-                                <?= htmlspecialchars($related['title']) ?>
-                            </a></h3>
-                        <p><?= htmlspecialchars($related['description']) ?></p>
-                    </article>
-                    <hr class="lastestnews1-hr">
-                </section>
-            <?php endforeach; ?>
+            <section class="latest-news">
+                <article style="max-width: 80% !important; margin-left: 20px;">
+                    <img src="../uploads/<?= htmlspecialchars($related['image']) ?>" alt="Hình ảnh nổi bật">
+                    <h3><a href="articleDetails.php?id=<?= $related['id'] ?>">
+                            <?= htmlspecialchars($related['title']) ?>
+                        </a></h3>
+                    <p><?= htmlspecialchars($related['description']) ?></p>
+                </article>
+                <hr class="lastestnews1-hr">
+            </section>
+        <?php endforeach; ?>
     </div>
 </main>
 
-<!-- <input type="hidden" id="news-id" value="<?= $article['id'] ?>"> -->
+<input type="hidden" id="news-id" value="<?= $article['id'] ?>">
 
 <?php
 $content = ob_get_clean();
