@@ -73,10 +73,10 @@
     font-size: 30px;
   }
 
-  .latest-news img, .top-news p {
+  /* .latest-news img, .top-news p {
     width: 300px;
     height: 200px;
-  }
+  } */
 
   .search-input {
     width: 100px;

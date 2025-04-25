@@ -17,5 +17,5 @@ $content =
 </body>
 HTML;
 
-include '../includes/masterAdmin.php'; // Giao diện chung
+include '../includes/masterAdmin.php';
 ?>

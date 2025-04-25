@@ -1,6 +1,6 @@
 <?php
-    error_reporting(E_ALL); // Báo cáo tất cả lỗi
-    ini_set('display_errors', 1); // Hiển thị lỗi
+    error_reporting(E_ALL); //báo cáo tất cả lỗi
+    ini_set('display_errors', 1); //hiển thị lỗi
     session_start();
     include "database.php";
 

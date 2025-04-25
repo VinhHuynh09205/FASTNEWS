@@ -28,7 +28,7 @@ $title = $article['title'] . ' - FASTNEWS';
 ;
 
 //Lấy bài viết liên quan đến chủ đề bài đang xem
-$relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 20);
+$relatedArticles = getNewsByCategoryFromDB($conn, $article['category'], $article['id'], 30);
 
 ob_start();
 ?>
@@ -67,7 +67,7 @@ ob_start();
             <h2>Bài viết liên quan</h2>
             <hr>
             <?php foreach (array_slice($relatedArticles, 0, 10) as $related): ?>
-                <section class="latest-news">
+                <section class="latest-news ">
                     <article>
                         <h3><a href="articleDetails.php?id=<?= $related['id'] ?>">
                                 <?= htmlspecialchars($related['title']) ?>
@@ -87,9 +87,9 @@ ob_start();
         <div id="most-viewed-news">
             <?php include '../includes/mostViewed.php'; ?>
         </div>
-        <?php foreach (array_slice($relatedArticles, 11, 20) as $related): ?>
-            <section class="latest-news">
-                <article style="max-width: 80% !important; margin-left: 20px;">
+        <?php foreach (array_slice($relatedArticles, 11, 30) as $related): ?>
+            <section class="latest-news latest-news-inDetail">
+                <article>
                     <img src="../uploads/<?= htmlspecialchars($related['image']) ?>" alt="Hình ảnh nổi bật">
                     <h3><a href="articleDetails.php?id=<?= $related['id'] ?>">
                             <?= htmlspecialchars($related['title']) ?>

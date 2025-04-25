@@ -8,6 +8,10 @@
     border-radius: 8px;
 }
 
+.articleDetailFlex {
+    display: flex;
+}
+
 .article-title {
     font-size: 32px;
     font-weight: bold;
@@ -164,4 +168,13 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
+}
+
+.latest-news-inDetail img {
+    width: 200px;
+    height: 150px;
+}
+
+.latest-news-inDetail {
+    padding: 0px 40px 0px 50px;
 }
