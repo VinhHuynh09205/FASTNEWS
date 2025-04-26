@@ -1,5 +1,6 @@
 <?php
 include_once '../functions/articleProcessing.php';
+include_once __DIR__ . '/../functions/database.php';
 
 $id = $_GET['id'] ?? null;
 $title = $id ? "Sửa Bài Báo" : "Thêm Bài Báo";
@@ -12,12 +13,16 @@ $articleContent = $article['content'] ?? '';
 $articleImage = $article['image'] ?? '';
 $articleCategory = $article['category'] ?? '';
 
+$sql = "SELECT DISTINCT category FROM news ORDER BY category ASC";
+$result = mysqli_query($conn, $sql);
+
 ob_start();
 ?>
 
 <div class="admin-container">
     <h2><?= $title ?></h2>
-    <form id="articleForm" class="form-container" method="POST" action="../functions/insertOrUpdateArticle.php" enctype="multipart/form-data">
+    <form id="articleForm" class="form-container" method="POST" action="../functions/insertOrUpdateArticle.php"
+        enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $articleId ?>">
 
         <div class="form-group">
@@ -52,15 +57,16 @@ ob_start();
             <label>Danh mục:</label>
             <select name="category" required>
                 <option value="">-- Chọn danh mục --</option>
-                <?php
-                $categories = ["Thời sự", "Thế giới", "Thể thao", "Công nghệ", "Giải trí"];
-                foreach ($categories as $cat):
-                    $selected = ($articleCategory === $cat) ? 'selected' : '';
-                ?>
-                    <option value="<?= $cat ?>" <?= $selected ?>><?= $cat ?></option>
-                <?php endforeach; ?>
+                <?php while ($row = mysqli_fetch_assoc($result)):
+                    $selected = ($articleCategory === $row['category']) ? 'selected' : '';
+                    ?>
+                    <option value="<?= htmlspecialchars($row['category']) ?>" <?= $selected ?>>
+                        <?= htmlspecialchars($row['category']) ?>
+                    </option>
+                <?php endwhile; ?>
             </select>
         </div>
+
 
         <button class="button" type="submit"><?= $title ?></button>
     </form>

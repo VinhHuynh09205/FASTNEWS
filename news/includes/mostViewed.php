@@ -16,7 +16,7 @@ if ($category) {
     $result = $conn->query($sql);
 }
 
-echo '<h2>Tin Xem Nhiều</h2>';
+echo '<h2>Xem Nhiều</h2>';
 
 $rank = 1;
 while ($row = $result->fetch_assoc()) {

@@ -13,7 +13,7 @@ if (!$category) {
 }
 
 //Lấy 24 bài viết mới nhất theo danh mục
-$allNews = getNewsByCategoryFromDB($conn, $category, null, 29);
+$allNews = getNewsByCategoryFromDB($conn, $category, null, 28);
 
 if (empty($allNews)) {
     echo "Không có bài viết nào trong danh mục này.";
@@ -24,7 +24,6 @@ $featured = array_shift($allNews); // 1 bài đầu
 $featured4 = array_splice($allNews, 0, 3); // 3 bài tiếp theo
 $sectionLeft = array_splice($allNews, 0, 10); // 10 bài tiếp theo
 $sectionRight = array_splice($allNews, 0, 15); // 10 bài tiếp theo
-
 
 ob_start();
 ?>

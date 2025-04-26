@@ -39,9 +39,11 @@ ob_start();
         <article class="article-detail">
             <h2 class="article-title"><?= htmlspecialchars($article['title']) ?></h2>
             <p class="article-meta">
-                Tác giả: <strong><?= htmlspecialchars($article['author']) ?></strong> |
-                Ngày đăng: <?= date('d/m/Y', strtotime($article['created_at'])) ?>
-                <span style="float: right; margin-right: 10px">👁 <?= $article['views'] ?></span>
+                Tác giả: <strong><?= htmlspecialchars($article['author']) ?></strong> 
+                <span class="date">|
+                    Ngày đăng: <?= date('d/m/Y', strtotime($article['created_at'])) ?> 
+                </span>
+                <span class="eye"> 👁 <?= $article['views'] ?></span>
             </p>
             <img src="../uploads/<?= htmlspecialchars($article['image']) ?>" alt="Hình ảnh minh họa"
                 class="article-image">

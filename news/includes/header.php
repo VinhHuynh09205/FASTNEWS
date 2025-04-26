@@ -1,3 +1,9 @@
+<?php
+include_once __DIR__ . '/../functions/database.php';
+$sql = "select distinct category from news";
+$kq = mysqli_query($conn, $sql);
+?>
+
 <header>
   <div class="header-container">
     <h1>
@@ -24,13 +30,17 @@
   <nav id="menu">
     <ul>
       <li>
-        <a href="<?php echo BASE_URL; ?>index.php"><i class="fa fa-home"></i> Trang chủ</a>
+        <a href="<?php echo BASE_URL; ?>index.php"><i class="fa fa-home"></i></a>
       </li>
-      <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=Thời sự">Thời sự</a></li>
-      <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=Thế giới">Thế giới</a></li>
-      <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=Thể thao">Thể thao</a></li>
-      <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=Công nghệ">Công nghệ</a></li>
-      <li><a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=Giải trí">Giải trí</a></li>
+
+      <?php while ($d = mysqli_fetch_array($kq)) { ?>
+        <li>
+          <a href="<?php echo BASE_URL; ?>page/CatalogueDetails.php?category=<?php echo urlencode($d['category']); ?>">
+            <?php echo htmlspecialchars($d['category']); ?>
+          </a>
+        </li>
+      <?php } ?>
+
     </ul>
   </nav>
 </header>

@@ -16,8 +16,8 @@ foreach ($allNews as $news) {
     if (in_array($news['id'], $featuredIds))
         continue;
 
-    if (count($latestNews) < 20) {
-        $latestNews[] = $news; //lấy 20 bài mới nhất để hiển thị
+    if (count($latestNews) < 50) {
+        $latestNews[] = $news;
     } else {
         $remainingNews[] = $news; //lấy các bài còn lại để lọc theo danh mục
     }
@@ -31,7 +31,7 @@ ob_start();
 ?>
 
 <main>
-    <h2 style="margin-left: 10px;">BÀI VIẾT NỔI BẬT</h2>
+    <h2 style="margin-left: 10px;">NỔI BẬT</h2>
     <div class="news-section">
         <!-- featured 1 -->
         <section class="featured">
@@ -40,7 +40,7 @@ ob_start();
                 <h3><b><a href="page/articleDetails.php?id=<?= $featuredNews[0]['id'] ?>">
                             <?= htmlspecialchars($featuredNews[0]['title']) ?></a></b></h3>
                 <p><?= htmlspecialchars($featuredNews[0]['description']) ?></p>
-                <a class="doctiep" href="page/articleDetails.php?id=<?= $featuredNews[0]['id'] ?>">Đọc tiếp</a>
+                <a class="doctiep read-more" href="page/articleDetails.php?id=<?= $featuredNews[0]['id'] ?>">Đọc tiếp →</a>
             </article>
         </section>
     </div>
@@ -54,7 +54,7 @@ ob_start();
                     <h3><b><a href="page/articleDetails.php?id=<?= $featuredNews[$i]['id'] ?>">
                                 <?= htmlspecialchars($featuredNews[$i]['title']) ?></a></b></h3>
                     <p><?= htmlspecialchars($featuredNews[$i]['description']) ?></p>
-                    <a class="doctiep" href="page/articleDetails.php?id=<?= $featuredNews[$i]['id'] ?>">Đọc tiếp</a>
+                    <a class="doctiep read-more" href="page/articleDetails.php?id=<?= $featuredNews[$i]['id'] ?>">Đọc tiếp →</a>
                 </article>
             </section>
         <?php endfor; ?>
@@ -64,7 +64,7 @@ ob_start();
     <div class="news-section2">
         <!--Tin tức mới nhất -->
         <section class="latest-news">
-            <h2>TIN MỚI NHẤT</h2>
+            <h2>MỚI NHẤT</h2>
             <hr>
             <?php foreach (array_slice($latestNews, 0, 9) as $news): ?>
                 <article>
@@ -115,7 +115,7 @@ ob_start();
         </div>
     </div>
     <section class="latest-news">
-            <?php foreach (array_slice($latestNews, 10, 20) as $news): ?>
+            <?php foreach (array_slice($latestNews, 10, 40) as $news): ?>
                 <article>
                     <h3><a href="page/articleDetails.php?id=<?= $news['id'] ?>">
                             <?= htmlspecialchars($news['title']) ?></a></h3>
